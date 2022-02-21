@@ -272,6 +272,9 @@ section.home-section div.text{
     font-weight: 500;
     margin: 18px
 }
+section.home-section div.bixi:hover{
+    box-shadow:rgba(99, 99, 99, 0.2)0px 2px 8px 0px;
+}
 @media (max-width: 420px){
     div.sidebar li span.tooltip{
       display: none;
