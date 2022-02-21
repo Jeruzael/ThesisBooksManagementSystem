@@ -279,6 +279,9 @@ section.home-section div.bixi:hover{
     div.sidebar li span.tooltip{
       display: none;
     }
+    table{
+        min-width: 100%;
+    }
 }
 
   
