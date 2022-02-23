@@ -78,7 +78,7 @@
           <section class="home-section"style="padding: 5%;">
               <div class="text" style="font-size: 40px; color: #7788F4;">Books</div>
               <div class="search__container">
-                <input class="search__input" type="text" placeholder="Search">
+                <input class="search__input" type="text" placeholder="Search Thesis Books">
               </div>
             <div class="credits__container" style="text-align: center;">
                 <button style="border: 1px solid #FD8978; padding: 10px; width: 200px; background-color: #FD8978; color: #FFF; border-radius: 10px;"><i class='bx bx-plus'></i>Add New Book</button>
@@ -137,7 +137,11 @@
                   </tbody>
                 </table>
               </div>
+              <div class="pagination">
+                <ul> <!--pages or li are comes from javascript --> </ul>
+              </div>
           </section>
+          <script src="pagination.js"></script>
           <script>
           let sidebar = document.querySelector(".sidebar");
           let closeBtn = document.querySelector("#btn");
