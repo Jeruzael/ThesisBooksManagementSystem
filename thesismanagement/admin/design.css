@@ -13,7 +13,7 @@ div.signin{
     margin-left:auto;
     margin-right:auto;
     border-radius:10px;
-    box-shadow:rgba(99, 99, 99, 0.2)0px 2px 8px 0px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 div.sidebar{
     position: fixed;
@@ -25,6 +25,7 @@ div.sidebar{
     padding: 6px 14px;
     z-index: 99;
     transition: all 0.5s ease;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 div.sidebar.open{
     width: 250px;
@@ -261,10 +262,7 @@ section.home-section{
     transition: all 0.5s ease;
     z-index: 2;
 }
-div.sidebar.open ~ section.home-section{
-    left: 250px;
-    width: calc(100% - 250px);
-}
+
 section.home-section div.text{
     display: inline-block;
     color: #11101d;
