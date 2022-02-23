@@ -76,15 +76,15 @@
             </ul>
           </div>
           <section class="home-section"style="padding: 5%;">
-              <div class="text" style="font-size: 40px; color: #7788F4;">Books Request</div>
-              <div class="container-fluid" style="padding: 5%;">
-                <table style="width:100%; border-collapse:collapse; margin:25px 0; font-size:0.9em; border-radius:5px 5px 0 0; overflow-x: scroll;table-layout: fixed;">
+              <div class="text" style="font-size: 40px; color: #7788F4;">Book Requests</div>
+              <div class="container-fluid" style="padding: 5%; overflow-x: scroll; ">
+                <table style="width:100%; border-collapse:collapse; margin:25px 0; font-size:0.9em; border-radius:5px 5px 0 0;min-width: 1000px;">
                   <thead style="background-color: #7788F4; color: #FFF; text-align: center; height: 50px; vertical-align: middle;">
+                    <th>ID</th>
                     <th>Book Number</th>
-                    <th>Requested Book</th>
-                    <th>Borrower</th>
-                    <th>Borrowing Date</th>
-                    <th>Returning Date</th>
+                    <th>Book Title</th>
+                    <th>Cover Image</th>
+                    <th>Status</th>
                     <th>Action</th>
                   </thead>
                   <tbody>
@@ -104,10 +104,38 @@
                       <td>Available</td>
                       <td><button style="padding: 5px; width: 70px; color: #fff; background-color: #FD8978; border: #FD8978;"><i class='bx bx-pencil' ></i>Edit</button></td>
                     </tr>
+                    <tr>
+                      <td>001</td>
+                      <td>978-3-16-148410-0</td>
+                      <td>Methods for Java Programming</td>
+                      <td><img class="img-fluid" style="height: 50px;" src="../resources/logo3.png"/></td>
+                      <td>Available</td>
+                      <td><button style="padding: 5px; width: 70px; color: #fff; background-color: #FD8978; border: #FD8978;"><i class='bx bx-pencil' ></i>Edit</button></td>
+                    </tr>
+                    <tr>
+                      <td>001</td>
+                      <td>978-3-16-148410-0</td>
+                      <td>Methods for Java Programming</td>
+                      <td><img class="img-fluid" style="height: 50px;" src="../resources/logo3.png"/></td>
+                      <td>Available</td>
+                      <td><button style="padding: 5px; width: 70px; color: #fff; background-color: #FD8978; border: #FD8978;"><i class='bx bx-pencil' ></i>Edit</button></td>
+                    </tr>
+                    <tr>
+                      <td>001</td>
+                      <td>978-3-16-148410-0</td>
+                      <td>Methods for Java Programming</td>
+                      <td><img class="img-fluid" style="height: 50px;" src="../resources/logo3.png"/></td>
+                      <td>Available</td>
+                      <td><button style="padding: 5px; width: 70px; color: #fff; background-color: #FD8978; border: #FD8978;"><i class='bx bx-pencil' ></i>Edit</button></td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
+              <div class="pagination">
+                <ul> <!--pages or li are comes from javascript --> </ul>
+              </div>
           </section>
+          <script src="pagination.js"></script>
           <script>
           let sidebar = document.querySelector(".sidebar");
           let closeBtn = document.querySelector("#btn");
