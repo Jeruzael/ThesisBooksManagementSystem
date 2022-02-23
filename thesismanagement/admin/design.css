@@ -275,7 +275,7 @@ section.home-section div.bixi:hover{
 }
 @media (max-width: 420px){
     div.sidebar li span.tooltip{
-      display: none;
+        display: none;
     }
 }
 td{
