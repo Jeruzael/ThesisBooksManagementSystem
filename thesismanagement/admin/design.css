@@ -291,7 +291,7 @@ td{
     font-size: 22px;
     font-weight: 900;
     text-align: center;
-    color: #ff8b88;
+    color: #FD8978;
 }
 
 .search__input {
@@ -345,7 +345,7 @@ td{
 }
 
 .credits__link {
-    color: #ff8b88;
+    color: #FD8978;
     text-decoration: none;
     transition: color 250ms ease-in;
 }
@@ -354,3 +354,50 @@ td{
     .credits__link:focus {
         color: rgb(191, 137, 135);
     }
+    .pagination ul{
+        width: 100%;
+        display: flex;
+        
+      }
+      .pagination ul li{
+        color: #7788F4;
+        list-style: none;
+        line-height: 45px;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 500;
+        cursor: pointer;
+        user-select: none;
+        transition: all 0.3s ease;
+      }
+      .pagination ul li.numb{
+        list-style: none;
+        height: 45px;
+        width: 45px;
+        margin: 0 3px;
+        line-height: 45px;
+        
+      }
+      .pagination ul li.numb.first{
+        margin: 0px 3px 0 -5px;
+      }
+      .pagination ul li.numb.last{
+        margin: 0px -5px 0 3px;
+        display: none;
+      }
+      .pagination ul li.dots{
+        font-size: 22px;
+        cursor: default;
+        display: none;
+      }
+      .pagination ul li.btn{
+        padding: 0 20px;
+        
+      }
+      .pagination li.active,
+      .pagination ul li.numb:hover,
+      .pagination ul li:first-child:hover,
+      .pagination ul li:last-child:hover{
+        color: #fff;
+        background: #7788F4;
+      }
