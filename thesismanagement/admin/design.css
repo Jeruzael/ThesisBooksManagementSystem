@@ -367,3 +367,8 @@ div.pagination ul li:last-child:hover{
     color: #fff;
     background: #7788F4;
 }
+button.upload:hover{
+    color: #fff;
+    background-color: #7788F4;
+    border: 1px solid #7788F4;
+}
