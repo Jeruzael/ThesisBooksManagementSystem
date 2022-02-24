@@ -273,6 +273,11 @@ section.home-section div.text{
 section.home-section div.bixi:hover{
     box-shadow:rgba(99, 99, 99, 0.2)0px 2px 8px 0px;
 }
+input.upload:hover{
+    color: #fff;
+    background-color: #7788F4;
+    border: 1px solid #7788F4;
+}
 @media (max-width: 420px){
     div.sidebar li span.tooltip{
         display: none;
@@ -366,9 +371,4 @@ div.pagination ul li:first-child:hover,
 div.pagination ul li:last-child:hover{
     color: #fff;
     background: #7788F4;
-}
-button.upload:hover{
-    color: #fff;
-    background-color: #7788F4;
-    border: 1px solid #7788F4;
 }
