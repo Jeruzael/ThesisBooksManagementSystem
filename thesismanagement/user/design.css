@@ -21,7 +21,7 @@ div.sidebar{
     top: 0;
     height: 100%;
     width: 78px;
-    background: #7788F4;
+    background: #FD8978;
     padding: 6px 14px;
     z-index: 99;
     transition: all 0.5s ease;
@@ -96,7 +96,7 @@ div.sidebar.open ul.nav-list ul.book-show.show li a{
     padding-left: 0px;
 }
 div.sidebar.open ul.nav-list ul.book-show.show li a:hover{
-    color: #7788F4;
+    color: #FD8978;
 }
 div.sidebar li{
     position: relative;
