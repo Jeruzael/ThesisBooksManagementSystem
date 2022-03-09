@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    require "../data/connection.php";
+
+    $colorQuery = "SELECT * FROM themecolor where colorId = 1";
+    $color = mysqli_query($connect, $colorQuery);
+    $fetchColor = mysqli_fetch_assoc($color);
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,7 +38,7 @@
                         <input style="font-size:8pt; padding:10px;" name="password" type="password" ondrop="return false;" oninvalid="IninvalidMsg(this);" oninput="IninvalidMsg(this);" onpaste="return false;" class="form-control" placeholder="Password" required="Required">
                         <p style="margin-left:10px; margin-top:10px; font-size:9pt;"><a href="forgot.html" style="color:#5065AF; text-decoration:none;">Forgot Password?</a></p>
 
-                        <input style="margin-top:20px; font-size:9pt; padding:10px; width:100%; background-color: #FD8978; border-color: #FD8978;" name="doctor_login" type="submit" value="Sign in" class="btn btn-primary">
+                        <input style="margin-top:20px; font-size:9pt; padding:10px; width:100%; background-color: <?php echo $fetchColor['color_5']?>; border-color: #FD8978;" name="doctor_login" type="submit" value="Sign in" class="btn btn-primary">
                     </form>
                 </div>
             </div>
