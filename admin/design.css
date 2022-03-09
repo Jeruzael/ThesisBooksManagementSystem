@@ -282,6 +282,9 @@ input.upload:hover{
     div.sidebar li span.tooltip{
         display: none;
     }
+    div.signin{
+        width: 90%;
+    }
 }
 td{
     padding: 5px 10px;
