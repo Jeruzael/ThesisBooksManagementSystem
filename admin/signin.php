@@ -5,6 +5,10 @@
     $color = mysqli_query($connect, $colorQuery);
     $fetchColor = mysqli_fetch_assoc($color);
 
+    $logoQuery = "SELECT * FROM teamslogo where logoId = 1";
+    $logo = mysqli_query($connect, $logoQuery);
+    $fetchLogo = mysqli_fetch_assoc($logo);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +20,7 @@
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="icon" type="png" href="../resources/logo2.png"/>
+        <link rel="icon" type="png" href="../resources/<?php echo $fetchLogo['logo_4']?>"/>
         <link rel="stylesheet" type="text/css" href="design.css"/>
         
     </head>
