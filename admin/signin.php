@@ -1,6 +1,10 @@
 <?php
     require "../data/connection.php";
 
+    $backgroundQuery = "SELECT * FROM teamsbackground where backgroundId = 1";
+    $background = mysqli_query($connect, $backgroundQuery);
+    $fetchBackground = mysqli_fetch_assoc($background);
+
     $colorQuery = "SELECT * FROM themecolor where colorId = 1";
     $color = mysqli_query($connect, $colorQuery);
     $fetchColor = mysqli_fetch_assoc($color);
@@ -43,15 +47,15 @@
                         
                         <label style="margin-top:20px; font-size:9pt;" class="FormLabel form-label"><i class='bx bx-lock-alt'></i> Password</label>
                         <input style="font-size:8pt; padding:10px;" name="password" type="password" ondrop="return false;" oninvalid="IninvalidMsg(this);" oninput="IninvalidMsg(this);" onpaste="return false;" class="form-control" placeholder="Password" required="Required">
-                        <p style="margin-left:10px; margin-top:10px; font-size:9pt;"><a href="forgot.html" style="color:#5065AF; text-decoration:none;">Forgot Password?</a></p>
+                        <p style="margin-left:10px; margin-top:10px; font-size:9pt;"><a href="forgot.html" style="color:<?php echo $fetchColor['color_7']?>; text-decoration:none;">Forgot Password?</a></p>
 
-                        <input style="margin-top:20px; font-size:9pt; padding:10px; width:100%; background-color: <?php echo $fetchColor['color_5']?>; border-color: #FD8978;" name="doctor_login" type="submit" value="Sign in" class="btn btn-primary">
+                        <input style="margin-top:20px; font-size:12pt; padding:10px; width:100%; background-color: <?php echo $fetchColor['color_5']?>; border-color: <?php echo $fetchColor['color_5']?>;" name="login" type="submit" value="Sign in" class="btn btn-primary">
                     </form>
                 </div>
             </div>
 
             <!-- right side -->
-            <div style="padding:10%; background-color:#DDE2FD;" class="col-md-6">
+            <div style="padding:10%; background-color:<?php echo $fetchBackground['background_1']?>;" class="col-md-6">
                 <img style="margin-top:20px;" class="img-fluid" src="../resources/<?php echo $fetchPoster['poster_2']?>"/>
             </div>
         </div>

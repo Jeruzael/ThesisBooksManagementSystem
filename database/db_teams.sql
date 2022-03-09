@@ -33,3 +33,10 @@ create table teamsPoster(
 );
 insert into teamsPoster(posterId,poster_1,poster_2,poster_3,poster_4,poster_5)
 values(1,"poster_1.png","poster_2.png", "poster_3.png", "poster_4.png","poster_5.png");
+
+create table teamsBackground(
+	backgroundId int primary key,
+    background_1 VARCHAR(50)
+);
+insert into teamsBackground(backgroundId,background_1)
+values(1,"rgba(119, 136, 244, 0.21)");
