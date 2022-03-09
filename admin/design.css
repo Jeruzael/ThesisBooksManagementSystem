@@ -21,7 +21,6 @@ div.sidebar{
     top: 0;
     height: 100%;
     width: 78px;
-    background: #7788F4;
     padding: 6px 14px;
     z-index: 99;
     transition: all 0.5s ease;
@@ -96,7 +95,7 @@ div.sidebar.open ul.nav-list ul.book-show.show li a{
     padding-left: 0px;
 }
 div.sidebar.open ul.nav-list ul.book-show.show li a:hover{
-    color: #7788F4;
+    color: #fff;
 }
 div.sidebar li{
     position: relative;
@@ -167,14 +166,14 @@ div.sidebar li a{
     display: flex;
     height: 100%;
     width: 100%;
-    border-radius: 12px;
+    border-radius: 7px;
     align-items: center;
     text-decoration: none;
     transition: all 0.4s ease;
     background: #7788F4;
 }
 div.sidebar li a:hover{
-    background: #FFF;
+    background: #AED5FF;
 }
 div.sidebar li a span.links_name{
     color: #fff;
@@ -192,7 +191,7 @@ div.sidebar.open li a span.links_name{
 div.sidebar li a:hover span.links_name,
 div.sidebar li a:hover i{
     transition: all 0.5s ease;
-    color: #7788F4;
+    color: #fff;
 }
 div.sidebar li i{
     height: 50px;
