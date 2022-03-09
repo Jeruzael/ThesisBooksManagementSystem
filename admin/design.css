@@ -285,6 +285,11 @@ input.upload:hover{
         width: 90%;
     }
 }
+@media (max-width: 850px){
+    div.signin{
+        width: 85%;
+    }
+}
 td{
     padding: 5px 10px;
     text-align: center;
