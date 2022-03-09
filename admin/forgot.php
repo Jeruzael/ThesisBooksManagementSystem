@@ -47,7 +47,7 @@
                         <label style="font-size:16px; line-height: 24px;" class="FormLabel form-label"><i class='bx bx-envelope'></i> Email Address</label>
                         <input style="font-size:13px; line-height: 20px; padding:10px; border-bottom: 1px solid rgba(167, 172, 182, 0.99); border-left: 0px; border-top: 0px;border-right: 0px; background-color: <?php echo $fetchColor['color_9']?>; border-radius:0px;" name="email" type="email" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Email" required="Required">
                         
-                        <input style="margin-top:20px; font-size:9pt; padding:10px; width:100%; background-color: <?php echo $fetchColor['color_5']?>; border-color: <?php echo $fetchColor['color_5']?>;" name="adminOtp" type="submit" value="Send OTP" class="btn btn-primary">
+                        <input style="margin-top:20px; font-size: 22px; line-height: 33px; padding:10px; width:100%; background-color: <?php echo $fetchColor['color_5']?>; border-color: <?php echo $fetchColor['color_5']?>;" name="adminOtp" type="submit" value="Send OTP" class="btn btn-primary">
                     </form>
                 </div>
             </div>
