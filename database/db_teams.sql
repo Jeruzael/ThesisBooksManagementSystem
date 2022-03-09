@@ -22,3 +22,14 @@ create table teamsLogo(
 );
 insert into teamsLogo(logoId,logo_1,logo_2,logo_3,logo_4)
 values(1,"teamsLogo_1.png","teamsLogo_2.png", "teamsLogo_3.png", "teamsLogo_4.png");
+
+create table teamsPoster(
+	posterId int primary key,
+    poster_1 VARCHAR(20),
+    poster_2 VARCHAR(20),
+    poster_3 VARCHAR(20),
+    poster_4 VARCHAR(20),
+    poster_5 VARCHAR(20)
+);
+insert into teamsPoster(posterId,poster_1,poster_2,poster_3,poster_4,poster_5)
+values(1,"poster_1.png","poster_2.png", "poster_3.png", "poster_4.png","poster_5.png");

@@ -9,6 +9,10 @@
     $logo = mysqli_query($connect, $logoQuery);
     $fetchLogo = mysqli_fetch_assoc($logo);
 
+    $posterQuery = "SELECT * FROM teamsposter where posterId = 1";
+    $poster = mysqli_query($connect, $posterQuery);
+    $fetchPoster = mysqli_fetch_assoc($poster);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,7 +34,7 @@
 
             <!-- left side -->
             <div style="padding: 50px;" class="col-md-6">
-                <img src="../resources/logo1.png" class="img-fluid" style="height: 50px;"/>
+                <img src="../resources/<?php echo $fetchLogo['logo_1']?>" class="img-fluid" style="height: 50px;"/>
                 <h3 style="font-weight: 700; margin-top: 20%;">Sign in</h3>
                 <div class="form-outline">
                     <form action="signin.php" method="post">
@@ -48,7 +52,7 @@
 
             <!-- right side -->
             <div style="padding:10%; background-color:#DDE2FD;" class="col-md-6">
-                <img style="margin-top:20px;" class="img-fluid" src="../resources/adminposter.png"/>
+                <img style="margin-top:20px;" class="img-fluid" src="../resources/<?php echo $fetchPoster['poster_2']?>"/>
             </div>
         </div>
 
