@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,7 +21,7 @@
                 <img src="../resources/logo1.png" class="img-fluid" style="height: 50px;"/>
                 <h3 style="font-weight: 700; margin-top: 20%;">Sign in</h3>
                 <div class="form-outline">
-                    <form action="#" method="post">
+                    <form action="dashboard.php" method="post">
                         <label style="margin-top:30px; font-size:9pt;" class="FormLabel form-label"><i class='bx bx-envelope'></i> Email Address</label>
                         <input style="font-size:8pt; padding:10px;" name="email" type="email" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Email" required="Required">
                         
