@@ -32,9 +32,9 @@
         <link rel="stylesheet" type="text/css" href="design.css"/>
         
     </head>
-    <body>
+    <body style="background-color: <?php echo $fetchColor['color_9']?>">
         <!-- main container -->
-        <div class="container-fluid row signin">
+        <div class="container-fluid row signin" style="background-color: <?php echo $fetchColor['color_9']?>">
 
             <!-- left side -->
             <div style="padding: 50px;" class="col-md-6">
@@ -43,10 +43,10 @@
                 <div class="form-outline">
                     <form action="signin.php" method="post">
                         <label style="margin-top:30px; font-size:9pt;" class="FormLabel form-label"><i class='bx bx-envelope'></i> Email Address</label>
-                        <input style="font-size:8pt; padding:10px;" name="email" type="email" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Email" required="Required">
+                        <input style="font-size:8pt; padding:10px; border-bottom: 1px solid rgba(167, 172, 182, 0.99); border-left: 0px; border-top: 0px;border-right: 0px; background-color: <?php echo $fetchColor['color_9']?>; border-radius:0px;" name="email" type="email" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Email" required="Required">
                         
                         <label style="margin-top:20px; font-size:9pt;" class="FormLabel form-label"><i class='bx bx-lock-alt'></i> Password</label>
-                        <input style="font-size:8pt; padding:10px;" name="password" type="password" ondrop="return false;" oninvalid="IninvalidMsg(this);" oninput="IninvalidMsg(this);" onpaste="return false;" class="form-control" placeholder="Password" required="Required">
+                        <input style="font-size:8pt; padding:10px; border-bottom: 1px solid rgba(167, 172, 182, 0.99); border-left: 0px; border-top: 0px;border-right: 0px; background-color: <?php echo $fetchColor['color_9']?>; border-radius:0px;" name="password" type="password" ondrop="return false;" oninvalid="IninvalidMsg(this);" oninput="IninvalidMsg(this);" onpaste="return false;" class="form-control" placeholder="Password" required="Required">
                         <p style="margin-left:10px; margin-top:10px; font-size:9pt;"><a href="forgot.html" style="color:<?php echo $fetchColor['color_7']?>; text-decoration:none;">Forgot Password?</a></p>
 
                         <input style="margin-top:20px; font-size:12pt; padding:10px; width:100%; background-color: <?php echo $fetchColor['color_5']?>; border-color: <?php echo $fetchColor['color_5']?>;" name="login" type="submit" value="Sign in" class="btn btn-primary">
