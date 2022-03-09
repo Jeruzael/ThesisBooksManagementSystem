@@ -1,3 +1,8 @@
+<?php
+    require "../data/connection.php";
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>

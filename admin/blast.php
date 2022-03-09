@@ -1,3 +1,8 @@
+<?php
+    require "../data/control.php";
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -76,17 +81,16 @@
             </ul>
           </div>
           <section class="home-section"style="padding: 5%;">
-              <div class="text" style="font-size: 40px; color: #7788F4;">Late Returnees/Damaged Books</div>
+              <div class="text" style="font-size: 40px; color: #7788F4;">Lost Books</div>
               <div class="container-fluid" style="padding: 5%; overflow-x: scroll; ">
                 <table style="width:100%; border-collapse:collapse; margin:25px 0; font-size:0.9em; border-radius:5px 5px 0 0;min-width: 1000px;">
                   <thead style="background-color: #7788F4; color: #FFF; text-align: center; height: 50px; vertical-align: middle;">
                     <th>Reference #</th>
                     <th>Book Borrowed</th>
                     <th>Borrower</th>
-                    <th>Date Borrowed</th>
-                    <th>Returning Date</th>
+                    <th>Borrowing Date</th>
+                    <th>Date Returned</th>
                     <th>Payment Status</th>
-                    <th>Action</th>
                   </thead>
                   <tbody>
                     <tr style="border-bottom:2px solid whitesmoke;">
@@ -96,7 +100,6 @@
                       <td>12/12/21</td>
                       <td>12/17/21</td>
                       <td>Paid</td>
-                      <td><button style="margin-right: 5px; padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-check' style="font-size: 15px; color: #32a852;"></i></button></td>
                     </tr>
                     <tr style="border-bottom:2px solid whitesmoke;">
                       <td>2021A001</td>
@@ -105,7 +108,6 @@
                       <td>12/12/21</td>
                       <td>12/17/21</td>
                       <td>Paid</td>
-                      <td><button style="margin-right: 5px; padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-check' style="font-size: 15px; color: #32a852;"></i></button></td>
                     </tr>
                     <tr style="border-bottom:2px solid whitesmoke;">
                       <td>2021A001</td>
@@ -114,7 +116,6 @@
                       <td>12/12/21</td>
                       <td>12/17/21</td>
                       <td>Paid</td>
-                      <td><button style="margin-right: 5px; padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-check' style="font-size: 15px; color: #32a852;"></i></button></td>
                     </tr>
                     <tr style="border-bottom:2px solid whitesmoke;">
                       <td>2021A001</td>
@@ -123,7 +124,6 @@
                       <td>12/12/21</td>
                       <td>12/17/21</td>
                       <td>Paid</td>
-                      <td><button style="margin-right: 5px; padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-check' style="font-size: 15px; color: #32a852;"></i></button></td>
                     </tr>
                     <tr style="border-bottom:2px solid whitesmoke;">
                       <td>2021A001</td>
@@ -132,7 +132,6 @@
                       <td>12/12/21</td>
                       <td>12/17/21</td>
                       <td>Paid</td>
-                      <td><button style="margin-right: 5px; padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-check' style="font-size: 15px; color: #32a852;"></i></button></td>
                     </tr>
                   </tbody>
                 </table>

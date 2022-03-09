@@ -1,5 +1,4 @@
 <?php
-    session_start();
     require "../data/connection.php";
 
     $colorQuery = "SELECT * FROM themecolor where colorId = 1";

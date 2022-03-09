@@ -1,3 +1,8 @@
+<?php
+    require "../data/control.php";
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>

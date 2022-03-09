@@ -1,3 +1,8 @@
+<?php
+    require "../data/control.php";
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -76,46 +81,69 @@
             </ul>
           </div>
           <section class="home-section"style="padding: 5%;">
-              <div class="text" style="font-size: 40px; color: #7788F4;">Edit Profile</div>
-              <div class="container-fluid" style="text-align: center;">
-                <img class="img-fluid" src="../resources/nano.jpg" style="height: 200px; border-radius: 50%;"/><br>
-                <input class="upload" type="submit" style="padding: 10px; margin: 10px; border: 1px solid #7788F4; color: #7788F4; background-color: #fff; width: 200px;" value="upload"/>
+              <div class="text" style="font-size: 40px; color: #7788F4;">Manage Users</div>
+              <div class="search__container">
+                <input class="search__input" type="text" placeholder="Search Users...">
               </div>
-              <div class="container-fluid row" style="padding-left: 15%; padding-right: 15%;">
-                <div class="col" style="padding-top: 20px;">
-                  <label style="padding-left: 15px;">Firstname</label><br>
-                  <input class="form-control" type="text" placeholder="Danica"/>
-                </div>
-                <div class="col" style="padding-top: 20px;">
-                  <label style="padding-left: 15px;">Lastname</label><br>
-                  <input class="form-control" type="text" placeholder="Cabullo"/>
-                </div>
+              <div class="container-fluid" style="padding: 5%; overflow-x: scroll; ">
+                <table style="width:100%; border-collapse:collapse; margin:25px 0; font-size:0.9em; border-radius:5px 5px 0 0;min-width: 1000px;">
+                  <thead style="background-color: #7788F4; color: #FFF; text-align: center; height: 50px; vertical-align: middle;">
+                    <th>User Number</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Total Book Borrowed</th>
+                    <th>Returned Books</th>
+                    <th>Action</th>
+                  </thead>
+                  <tbody>
+                    <tr style="border-bottom:2px solid whitesmoke;">
+                      <td>20190391-S</td>
+                      <td>Danica Cabullo</td>
+                      <td>Active</td>
+                      <td>4</td>
+                      <td>4</td>
+                      <td><button style="padding: 5px; width: 80px; color: #fff; background-color: #FD8978; border: #FD8978;">Deactivate</button></td>
+                    </tr>
+                    <tr style="border-bottom:2px solid whitesmoke;">
+                      <td>20190391-S</td>
+                      <td>Danica Cabullo</td>
+                      <td>Active</td>
+                      <td>4</td>
+                      <td>4</td>
+                      <td><button style="padding: 5px; width: 80px; color: #fff; background-color: #FD8978; border: #FD8978;">Deactivate</button></td>
+                    </tr>
+                    <tr style="border-bottom:2px solid whitesmoke;">
+                      <td>20190391-S</td>
+                      <td>Danica Cabullo</td>
+                      <td>Active</td>
+                      <td>4</td>
+                      <td>4</td>
+                      <td><button style="padding: 5px; width: 80px; color: #fff; background-color: #FD8978; border: #FD8978;">Deactivate</button></td>
+                    </tr>
+                    <tr style="border-bottom:2px solid whitesmoke;">
+                      <td>20190391-S</td>
+                      <td>Danica Cabullo</td>
+                      <td>Active</td>
+                      <td>4</td>
+                      <td>4</td>
+                      <td><button style="padding: 5px; width: 80px; color: #fff; background-color: #FD8978; border: #FD8978;">Deactivate</button></td>
+                    </tr>
+                    <tr style="border-bottom:2px solid whitesmoke;">
+                      <td>20190391-S</td>
+                      <td>Danica Cabullo</td>
+                      <td>Active</td>
+                      <td>4</td>
+                      <td>4</td>
+                      <td><button style="padding: 5px; width: 80px; color: #fff; background-color: #FD8978; border: #FD8978;">Deactivate</button></td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <div class="container-fluid row" style="padding-left: 15%; padding-right: 15%;">
-                <div class="col" style="padding-top: 20px;">
-                  <label style="padding-left: 15px;">Email Address</label><br>
-                  <input class="form-control" type="email" placeholder="cabullo.danica.bscs2019@gmail.com" disabled/>
-                </div>
-                <div class="col" style="padding-top: 20px;">
-                  
-                </div>
-              </div>
-              <div class="container-fluid row" style="padding-left: 15%; padding-right: 15%;">
-                <div class="col" style="padding-top: 20px;">
-                  <label style="padding-left: 15px;">Password</label><br>
-                  <input class="form-control" type="password" placeholder="**********"/>
-                </div>
-                <div class="col" style="padding-top: 20px;">
-                  <label style="padding-left: 15px;">Confirm New Password</label><br>
-                  <input class="form-control" type="password" placeholder="**********"/>
-                </div>
-              </div>
-              <div class="container-fluid row" style="padding-left: 15%; padding-right: 15%;">
-                <div class="col" style="padding-top: 30px;">
-                  <input class="form-control" type="submit" value="Save Changes" style="background-color: #FD8978; border: 1px solid #FD8978; color: #fff;"/>
-                </div>
+              <div class="pagination">
+                <ul> <!--pages or li are comes from javascript --> </ul>
               </div>
           </section>
+          <script src="pagination.js"></script>
           <script>
           let sidebar = document.querySelector(".sidebar");
           let closeBtn = document.querySelector("#btn");
