@@ -36,7 +36,8 @@ values(1,"poster_1.png","poster_2.png", "poster_3.png", "poster_4.png","poster_5
 
 create table teamsBackground(
 	backgroundId int primary key,
-    background_1 VARCHAR(50)
+    background_1 VARCHAR(50),
+    background_2 VARCHAR(50)
 );
-insert into teamsBackground(backgroundId,background_1)
-values(1,"rgba(119, 136, 244, 0.21)");
+insert into teamsBackground(backgroundId,background_1,background_2)
+values(1,"rgba(119, 136, 244, 0.21)","rgba(174, 213, 255, 0.53)");

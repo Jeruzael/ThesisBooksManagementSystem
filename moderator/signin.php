@@ -18,12 +18,11 @@
     $fetchPoster = mysqli_fetch_assoc($poster);
 
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
 
-        <title>Change Password</title>
+        <title>Sign in</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -40,24 +39,24 @@
             <!-- left side -->
             <div style="padding: 50px;" class="col-md-6">
                 <img src="../resources/<?php echo $fetchLogo['logo_1']?>" class="img-fluid" style="height: 50px;"/>
-                <h3 style="font-weight: 600; font-size: 32px; line-height: 48px; margin-top: 20%;">Change Password</h3>
+                <h3 style="font-weight: 600; font-size: 32px; line-height: 48px; margin-top: 20%;">Sign in</h3>
                 <div class="form-outline">
-                    <form action="doctor.php" method="post">
-                        <p style="margin-top:30px; color: <?php echo $fetchColor['color_5']?>; font-size: 10pt;">Hello!, email@gmail.com <br> Please provide your new password</p>
-                        <label style="margin-top:20px; font-size:16px; line-height: 24px;" class="FormLabel form-label"><i class='bx bx-lock-alt'></i> New Password</label>
-                        <input style="font-size:8pt; padding:10px; border-bottom: 1px solid rgba(167, 172, 182, 0.99); border-left: 0px; border-top: 0px;border-right: 0px; background-color: <?php echo $fetchColor['color_9']?>; border-radius:0px;" name="password" type="password" ondrop="return false;" oninvalid="IninvalidMsg(this);" oninput="IninvalidMsg(this);" onpaste="return false;" class="form-control" placeholder="Password" required="Required">                        
+                    <form action="signin.php" method="post">
+                        <label style="margin-top:30px; font-size:16px; line-height: 24px;" class="FormLabel form-label"><i class='bx bx-envelope'></i> Email Address</label>
+                        <input style="font-size:13px; line-height: 20px; padding:10px; border-bottom: 1px solid rgba(167, 172, 182, 0.99); border-left: 0px; border-top: 0px;border-right: 0px; background-color: <?php echo $fetchColor['color_9']?>; border-radius:0px;" name="email" type="email" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Email" required="Required">
                         
-                        <label style="margin-top:20px; font-size:16px; line-height: 24px;" class="FormLabel form-label"><i class='bx bx-lock-alt'></i> Repeat New Password</label>
+                        <label style="margin-top:20px; font-size:16px; line-height: 24px;" class="FormLabel form-label"><i class='bx bx-lock-alt'></i> Password</label>
                         <input style="font-size:13px; line-height: 20px; padding:10px; border-bottom: 1px solid rgba(167, 172, 182, 0.99); border-left: 0px; border-top: 0px;border-right: 0px; background-color: <?php echo $fetchColor['color_9']?>; border-radius:0px;" name="password" type="password" ondrop="return false;" oninvalid="IninvalidMsg(this);" oninput="IninvalidMsg(this);" onpaste="return false;" class="form-control" placeholder="Password" required="Required">
+                        <p style="margin-left:10px; margin-top:10px; font-size:14px; line-height: 21px;"><a href="forgot.php" style="color:<?php echo $fetchColor['color_7']?>; text-decoration:none;">Forgot Password?</a></p>
 
-                        <input style="margin-top:20px; font-size: 22px; line-height: 33px; padding:10px; width:100%; background-color: <?php echo $fetchColor['color_5']?>; border-color: <?php echo $fetchColor['color_5']?>;" name="adminChangePass" type="submit" value="Change Password" class="btn btn-primary">
+                        <input style="margin-top:20px; font-size: 22px; line-height: 33px; padding:10px; width:100%; background-color: <?php echo $fetchColor['color_5']?>; border-color: <?php echo $fetchColor['color_5']?>;" name="moderatorLogin" type="submit" value="Sign in" class="btn btn-primary">
                     </form>
                 </div>
             </div>
 
             <!-- right side -->
-            <div style="padding:5%; background-color:<?php echo $fetchBackground['background_1']?>;" class="col-md-6">
-                <img style="margin-top: 45%;" class="img-fluid" src="../resources/<?php echo $fetchPoster['poster_2']?>"/>
+            <div style="padding:5%; background-color:<?php echo $fetchBackground['background_2']?>;" class="col-md-6">
+                <img style="margin-top: 45%;" class="img-fluid" src="../resources/<?php echo $fetchPoster['poster_3']?>"/>
             </div>
         </div>
 
