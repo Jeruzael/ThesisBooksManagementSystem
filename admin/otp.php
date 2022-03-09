@@ -48,14 +48,14 @@
                         <input style="font-size:13px; line-height: 20px; padding:10px; border-bottom: 1px solid rgba(167, 172, 182, 0.99); border-left: 0px; border-top: 0px;border-right: 0px; background-color: <?php echo $fetchColor['color_9']?>; border-radius:0px;" name="otp" type="number" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="6-Digit OTP" required="Required">
                         <p style="margin-left:10px; margin-top:10px; font-size:9pt;"><a href="forgot.php" style="color:<?php echo $fetchColor['color_7']?>; text-decoration:none;">Didn't get the code?</a></p>
 
-                        <input style="margin-top:20px; font-size: 22px; line-height: 33px; padding:10px; width:100%; background-color: <?php echo $fetchColor['color_5']?>; border-color: <?php echo $fetchColor['color_5']?>;" name="doctor_login" type="submit" value="Verify" class="btn btn-primary">
+                        <input style="margin-top:20px; font-size: 22px; line-height: 33px; padding:10px; width:100%; background-color: <?php echo $fetchColor['color_5']?>; border-color: <?php echo $fetchColor['color_5']?>;" name="adminVerify" type="submit" value="Verify" class="btn btn-primary">
                     </form>
                 </div>
             </div>
 
             <!-- right side -->
-            <div style="padding:10%; background-color:<?php echo $fetchBackground['background_1']?>;" class="col-md-6">
-                <img style="margin-top:20px;" class="img-fluid" src="../resources/<?php echo $fetchPoster['poster_2']?>"/>
+            <div style="padding:5%; background-color:<?php echo $fetchBackground['background_1']?>;" class="col-md-6">
+                <img style="margin-top: 45%;" class="img-fluid" src="../resources/<?php echo $fetchPoster['poster_2']?>"/>
             </div>
         </div>
 

@@ -55,8 +55,8 @@
             </div>
 
             <!-- right side -->
-            <div style="padding:10%; background-color:<?php echo $fetchBackground['background_1']?>;" class="col-md-6">
-                <img style="margin-top:10%;" class="img-fluid" src="../resources/<?php echo $fetchPoster['poster_2']?>"/>
+            <div style="padding:5%; background-color:<?php echo $fetchBackground['background_1']?>;" class="col-md-6">
+                <img style="margin-top: 45%;" class="img-fluid" src="../resources/<?php echo $fetchPoster['poster_2']?>"/>
             </div>
         </div>
 
