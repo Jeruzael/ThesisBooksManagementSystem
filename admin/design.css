@@ -260,9 +260,13 @@ input.upload:hover{
 }
 td{
     padding: 5px 10px;
-    text-align: center;
+    text-align: left;
     font-size: 9pt;
     height: 50px;
+}
+th{
+    padding: 5px 10px;
+    text-align: left;
 }
 div.search__container{
     padding-top: 5%;
