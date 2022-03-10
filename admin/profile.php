@@ -17,23 +17,22 @@
         <link rel="stylesheet" type="text/css" href="design.css"/>
         
     </head>
-    <body>
-        <div class="sidebar">
+    <body style="background-color: <?php echo $fetchColor['color_9']?>">
+        <div class="sidebar" style="background-color: <?php echo $fetchColor['color_7']?>">
             <div class="logo-details">
-              <img src="../resources/logo3.png" class="img-fluid" style="height: 50px;">
-                <div class="logo_name">Teams</div>
+              <img src="../resources/<?php echo $fetchLogo['logo_1']?>" class="img-fluid" style="height: 60px;">
                 <i class='bx bx-menu' id="btn" ></i>
             </div>
             <ul class="nav-list">
               <li>
-                <a href="dashboard.html">
+                <a href="dashboard.php">
                   <i class='bx bx-home'></i>
                   <span class="links_name">Home</span>
                 </a>
                  <span class="tooltip">Home</span>
               </li>
               <li>
-               <a href="books.html">
+               <a href="books.php">
                  <i class='bx bx-book' ></i>
                  <span class="links_name">Book</span>
                </a>
@@ -46,22 +45,22 @@
                  
                </a>
                <ul class="book-show">
-                <li><a href="brequest.html"><i class='bx bx-chevron-right' ></i>Book Request</a></li>
-                <li><a href="bborrowed.html"><i class='bx bx-chevron-right' ></i>Borrowed Books</a></li>
-                <li><a href="blate.html"><i class='bx bx-chevron-right' ></i>Late Returnees</a></li>
-                <li><a href="blast.html"><i class='bx bx-chevron-right' ></i>Lost Books</a></li>
+                <li><a href="brequest.php"><i class='bx bx-chevron-right' ></i>Book Request</a></li>
+                <li><a href="bborrowed.php"><i class='bx bx-chevron-right' ></i>Borrowed Books</a></li>
+                <li><a href="blate.php"><i class='bx bx-chevron-right' ></i>Late Returnees</a></li>
+                <li><a href="blost.php"><i class='bx bx-chevron-right' ></i>Lost Books</a></li>
                </ul>
                <span class="tooltip">Books Management</span>
              </li>
              <li>
-               <a href="user.html">
+               <a href="user.php">
                 <i class='bx bx-group' ></i>
                  <span class="links_name">Manage User</span>
                </a>
                <span class="tooltip">Manage User</span>
              </li>
              <li>
-               <a href="profile.html">
+               <a href="profile.php">
                 <i class='bx bx-user-circle' ></i>
                  <span class="links_name">Profile</span>
                </a>
