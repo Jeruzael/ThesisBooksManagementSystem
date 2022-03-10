@@ -18,7 +18,7 @@
     $poster = mysqli_query($connect, $posterQuery);
     $fetchPoster = mysqli_fetch_assoc($poster);
 
-    $requestQuery = "SELECT COUNT(requestId) as pendingRequest FROM thesisrequest";
+    $requestQuery = "SELECT COUNT(requestId) as pendingRequest FROM thesisrequest INNER JOIN thesisLibrary ON thesisrequest.requestBookId = thesisLibrary.bookId where thesisLibrary.bookStatus = 'available'";
     $request = mysqli_query($connect, $requestQuery);
     $fetchRequest = mysqli_fetch_assoc($request);
 

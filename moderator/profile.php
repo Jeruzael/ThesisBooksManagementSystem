@@ -7,20 +7,20 @@
 <html>
     <head>
 
-        <title>Dashboard</title>
+        <title>Books</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="icon" type="png" href="../resources/<?php echo $fetchLogo['logo_4']?>"/>
+        <link rel="icon" type="png" href="../resources/logo2.png"/>
         <link rel="stylesheet" type="text/css" href="design.css"/>
         
     </head>
     <body style="background-color: <?php echo $fetchColor['color_9']?>">
         <div class="sidebar" style="background-color: <?php echo $fetchColor['color_7']?>">
             <div class="logo-details">
-              <img src="../resources/<?php echo $fetchLogo['logo_5']?>" class="img-fluid" style="height: 60px;">
+              <img src="../resources/<?php echo $fetchLogo['logo_1']?>" class="img-fluid" style="height: 60px;">
                 <i class='bx bx-menu' id="btn" ></i>
             </div>
             <ul class="nav-list">
@@ -80,11 +80,44 @@
             </ul>
           </div>
           <section class="home-section"style="padding: 5%;">
-              <div class="text" style="font-size: 40px; color: #7788F4;">Dashboard</div>
-              <div class="container-fluid row">
-              <div class="col bixi" style="background-color: #AED5FF; padding: 3%; color: #fff; text-align: center; margin: 2%; border-radius: 5px;"><label style="font-size: 20px;">Registered Accounts</label><br><label style="font-size: 100px;"><?php echo $fetchUsers['registered']?></label><br><a href="#" style="text-decoration: none; color: #fff;">see more <i class='bx bx-right-arrow-alt'></i></a></div>
-              <div class="col bixi" style="background-color: #Fd8978; padding: 3%; color: #fff; text-align: center; margin: 2%; border-radius: 5px;"><label style="font-size: 20px;">Total Books Borrowed</label><br><label style="font-size: 100px;">2</label><br><a href="#" style="text-decoration: none; color: #fff;">see more <i class='bx bx-right-arrow-alt'></i></a></div>
-              <div class="col bixi" style="background-color: #7788F4; padding: 3%; color: #fff; text-align: center; margin: 2%; border-radius: 5px;"><label style="font-size: 20px;">Available Books</label><br><label style="font-size: 100px;"><?php echo $fetchBooks['booksCount']?></label><br><a href="#" style="text-decoration: none; color: #fff;">see more <i class='bx bx-right-arrow-alt'></i></a></div>
+              <div class="text" style="font-size: 40px; color: #7788F4;">Edit Profile</div>
+              <div class="container-fluid" style="text-align: center;">
+                <img class="img-fluid" src="../resources/nano.jpg" style="height: 200px; border-radius: 50%;"/><br>
+                <input class="upload" type="submit" style="padding: 10px; margin: 10px; border: 1px solid #7788F4; color: #7788F4; background-color: #fff; width: 200px;" value="upload"/>
+              </div>
+              <div class="container-fluid row" style="padding-left: 15%; padding-right: 15%;">
+                <div class="col" style="padding-top: 20px;">
+                  <label style="padding-left: 15px;">Firstname</label><br>
+                  <input class="form-control" type="text" placeholder="Danica"/>
+                </div>
+                <div class="col" style="padding-top: 20px;">
+                  <label style="padding-left: 15px;">Lastname</label><br>
+                  <input class="form-control" type="text" placeholder="Cabullo"/>
+                </div>
+              </div>
+              <div class="container-fluid row" style="padding-left: 15%; padding-right: 15%;">
+                <div class="col" style="padding-top: 20px;">
+                  <label style="padding-left: 15px;">Email Address</label><br>
+                  <input class="form-control" type="email" placeholder="cabullo.danica.bscs2019@gmail.com" disabled/>
+                </div>
+                <div class="col" style="padding-top: 20px;">
+                  
+                </div>
+              </div>
+              <div class="container-fluid row" style="padding-left: 15%; padding-right: 15%;">
+                <div class="col" style="padding-top: 20px;">
+                  <label style="padding-left: 15px;">Password</label><br>
+                  <input class="form-control" type="password" placeholder="**********"/>
+                </div>
+                <div class="col" style="padding-top: 20px;">
+                  <label style="padding-left: 15px;">Confirm New Password</label><br>
+                  <input class="form-control" type="password" placeholder="**********"/>
+                </div>
+              </div>
+              <div class="container-fluid row" style="padding-left: 15%; padding-right: 15%;">
+                <div class="col" style="padding-top: 30px;">
+                  <input class="form-control" type="submit" value="Save Changes" style="background-color: #FD8978; border: 1px solid #FD8978; color: #fff;"/>
+                </div>
               </div>
           </section>
           <script>

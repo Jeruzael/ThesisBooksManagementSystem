@@ -1,3 +1,8 @@
+<?php
+    require "../data/control.php";
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,23 +17,22 @@
         <link rel="stylesheet" type="text/css" href="design.css"/>
         
     </head>
-    <body>
-        <div class="sidebar">
+    <body style="background-color: <?php echo $fetchColor['color_9']?>">
+        <div class="sidebar" style="background-color: <?php echo $fetchColor['color_7']?>">
             <div class="logo-details">
-              <img src="../resources/logo3.png" class="img-fluid" style="height: 50px;">
-                <div class="logo_name">Teams</div>
+              <img src="../resources/<?php echo $fetchLogo['logo_1']?>" class="img-fluid" style="height: 60px;">
                 <i class='bx bx-menu' id="btn" ></i>
             </div>
             <ul class="nav-list">
               <li>
-                <a href="dashboard.html">
+                <a href="dashboard.php">
                   <i class='bx bx-home'></i>
                   <span class="links_name">Home</span>
                 </a>
                  <span class="tooltip">Home</span>
               </li>
               <li>
-               <a href="books.html">
+               <a href="books.php">
                  <i class='bx bx-book' ></i>
                  <span class="links_name">Book</span>
                </a>
@@ -41,15 +45,22 @@
                  
                </a>
                <ul class="book-show">
-                <li><a href="brequest.html"><i class='bx bx-chevron-right' ></i>Book Request</a></li>
-                <li><a href="bborrowed.html"><i class='bx bx-chevron-right' ></i>Borrowed Books</a></li>
-                <li><a href="blate.html"><i class='bx bx-chevron-right' ></i>Late Returnees</a></li>
-                <li><a href="blast.html"><i class='bx bx-chevron-right' ></i>Lost Books</a></li>
+                <li><a href="brequest.php"><i class='bx bx-chevron-right' ></i>Book Request</a></li>
+                <li><a href="bborrowed.php"><i class='bx bx-chevron-right' ></i>Borrowed Books</a></li>
+                <li><a href="blate.php"><i class='bx bx-chevron-right' ></i>Late Returnees</a></li>
+                <li><a href="blost.php"><i class='bx bx-chevron-right' ></i>Lost Books</a></li>
                </ul>
                <span class="tooltip">Books Management</span>
              </li>
              <li>
-               <a href="profile.html">
+               <a href="user.php">
+                <i class='bx bx-group' ></i>
+                 <span class="links_name">Manage User</span>
+               </a>
+               <span class="tooltip">Manage User</span>
+             </li>
+             <li>
+               <a href="profile.php">
                 <i class='bx bx-user-circle' ></i>
                  <span class="links_name">Profile</span>
                </a>
@@ -69,59 +80,64 @@
             </ul>
           </div>
           <section class="home-section"style="padding: 5%;">
-              <div class="text" style="font-size: 40px; color: #7788F4;">Book Requests</div>
+              <div class="text" style="font-size: 40px; color: #7788F4;">Late Returnees/Damaged Books</div>
               <div class="container-fluid" style="padding: 5%; overflow-x: scroll; ">
                 <table style="width:100%; border-collapse:collapse; margin:25px 0; font-size:0.9em; border-radius:5px 5px 0 0;min-width: 1000px;">
                   <thead style="background-color: #7788F4; color: #FFF; text-align: center; height: 50px; vertical-align: middle;">
-                    <th>Book Number</th>
-                    <th>Requested Book</th>
+                    <th>Reference #</th>
+                    <th>Book Borrowed</th>
                     <th>Borrower</th>
-                    <th>Borrowing Date</th>
+                    <th>Date Borrowed</th>
                     <th>Returning Date</th>
+                    <th>Payment Status</th>
                     <th>Action</th>
                   </thead>
                   <tbody>
                     <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>978-3-16-148410-0</td>
+                      <td>2021A001</td>
                       <td>Methods for Java Programming</td>
                       <td>Danica Cabullo</td>
                       <td>12/12/21</td>
                       <td>12/17/21</td>
-                      <td><button style="margin-right: 5px; padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-check' style="font-size: 15px; color: #32a852;"></i></button><button style="padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-x' style="font-size: 15px; color: #ff0000;"></i></button></td>
+                      <td>Paid</td>
+                      <td><button style="margin-right: 5px; padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-check' style="font-size: 15px; color: #32a852;"></i></button></td>
                     </tr>
                     <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>978-3-16-148410-0</td>
+                      <td>2021A001</td>
                       <td>Methods for Java Programming</td>
                       <td>Danica Cabullo</td>
                       <td>12/12/21</td>
                       <td>12/17/21</td>
-                      <td><button style="margin-right: 5px; padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-check' style="font-size: 15px; color: #32a852;"></i></button><button style="padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-x' style="font-size: 15px; color: #ff0000;"></i></button></td>
+                      <td>Paid</td>
+                      <td><button style="margin-right: 5px; padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-check' style="font-size: 15px; color: #32a852;"></i></button></td>
                     </tr>
                     <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>978-3-16-148410-0</td>
+                      <td>2021A001</td>
                       <td>Methods for Java Programming</td>
                       <td>Danica Cabullo</td>
                       <td>12/12/21</td>
                       <td>12/17/21</td>
-                      <td><button style="margin-right: 5px; padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-check' style="font-size: 15px; color: #32a852;"></i></button><button style="padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-x' style="font-size: 15px; color: #ff0000;"></i></button></td>
+                      <td>Paid</td>
+                      <td><button style="margin-right: 5px; padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-check' style="font-size: 15px; color: #32a852;"></i></button></td>
                     </tr>
                     <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>978-3-16-148410-0</td>
+                      <td>2021A001</td>
                       <td>Methods for Java Programming</td>
                       <td>Danica Cabullo</td>
                       <td>12/12/21</td>
                       <td>12/17/21</td>
-                      <td><button style="margin-right: 5px; padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-check' style="font-size: 15px; color: #32a852;"></i></button><button style="padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-x' style="font-size: 15px; color: #ff0000;"></i></button></td>
+                      <td>Paid</td>
+                      <td><button style="margin-right: 5px; padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-check' style="font-size: 15px; color: #32a852;"></i></button></td>
                     </tr>
                     <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>978-3-16-148410-0</td>
+                      <td>2021A001</td>
                       <td>Methods for Java Programming</td>
                       <td>Danica Cabullo</td>
                       <td>12/12/21</td>
                       <td>12/17/21</td>
-                      <td><button style="margin-right: 5px; padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-check' style="font-size: 15px; color: #32a852;"></i></button><button style="padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-x' style="font-size: 15px; color: #ff0000;"></i></button></td>
+                      <td>Paid</td>
+                      <td><button style="margin-right: 5px; padding: 5px; width: 30px; color: #fff; background-color: #AED5FF; border: #AED5FF;"><i class='bx bx-check' style="font-size: 15px; color: #32a852;"></i></button></td>
                     </tr>
-                    
                   </tbody>
                 </table>
               </div>

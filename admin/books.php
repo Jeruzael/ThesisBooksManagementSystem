@@ -20,7 +20,7 @@
     <body style="background-color: <?php echo $fetchColor['color_9']?>">
         <div class="sidebar" style="background-color: <?php echo $fetchColor['color_7']?>">
             <div class="logo-details">
-              <img src="../resources/<?php echo $fetchLogo['logo_1']?>" class="img-fluid" style="height: 60px;">
+              <img src="../resources/<?php echo $fetchLogo['logo_5']?>" class="img-fluid" style="height: 60px;">
                 <i class='bx bx-menu' id="btn" ></i>
             </div>
             <ul class="nav-list">

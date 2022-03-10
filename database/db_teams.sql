@@ -18,10 +18,11 @@ create table teamsLogo(
     logo_1 VARCHAR(20),
     logo_2 VARCHAR(20),
     logo_3 VARCHAR(20),
-    logo_4 VARCHAR(20)
+    logo_4 VARCHAR(20),
+    logo_5 VARCHAR(20)
 );
-insert into teamsLogo(logo_1,logo_2,logo_3,logo_4)
-values("teamsLogo_1.png","teamsLogo_2.png", "teamsLogo_3.png", "teamsLogo_4.png");
+insert into teamsLogo(logo_1,logo_2,logo_3,logo_4,logo_5)
+values("teamsLogo_1.png","teamsLogo_2.png", "teamsLogo_3.png", "teamsLogo_4.png","teamsLogo_5.png");
 
 create table teamsPoster(
 	posterId int primary key auto_increment,

@@ -7,20 +7,20 @@
 <html>
     <head>
 
-        <title>Books</title>
+        <title>Teams Users</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="icon" type="png" href="../resources/logo2.png"/>
+        <link rel="icon" type="png" href="../resources/<?php echo $fetchLogo['logo_4']?>"/>
         <link rel="stylesheet" type="text/css" href="design.css"/>
         
     </head>
     <body style="background-color: <?php echo $fetchColor['color_9']?>">
         <div class="sidebar" style="background-color: <?php echo $fetchColor['color_7']?>">
             <div class="logo-details">
-              <img src="../resources/<?php echo $fetchLogo['logo_1']?>" class="img-fluid" style="height: 60px;">
+              <img src="../resources/<?php echo $fetchLogo['logo_5']?>" class="img-fluid" style="height: 60px;">
                 <i class='bx bx-menu' id="btn" ></i>
             </div>
             <ul class="nav-list">
