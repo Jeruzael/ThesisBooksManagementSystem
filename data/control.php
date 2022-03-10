@@ -18,4 +18,16 @@
     $poster = mysqli_query($connect, $posterQuery);
     $fetchPoster = mysqli_fetch_assoc($poster);
 
+    $requestQuery = "SELECT COUNT(requestId) as pendingRequest FROM thesisrequest";
+    $request = mysqli_query($connect, $requestQuery);
+    $fetchRequest = mysqli_fetch_assoc($request);
+
+    $usersQuery = "SELECT COUNT(userId) as registered FROM teamsuser";
+    $users = mysqli_query($connect, $usersQuery);
+    $fetchUsers = mysqli_fetch_assoc($users);
+
+    $booksQuery = "SELECT COUNT(bookId) as booksCount FROM thesisLibrary WHERE bookStatus = 'available'";
+    $books = mysqli_query($connect, $booksQuery);
+    $fetchBooks = mysqli_fetch_assoc($books);
+
 ?>

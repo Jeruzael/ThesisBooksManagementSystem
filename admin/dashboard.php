@@ -82,9 +82,9 @@
           <section class="home-section"style="padding: 5%;">
               <div class="text" style="font-size: 40px; color: #7788F4;">Dashboard</div>
               <div class="container-fluid row">
-              <div class="col bixi" style="background-color: #AED5FF; padding: 3%; color: #fff; text-align: center; margin: 2%; border-radius: 5px;"><label style="font-size: 20px;">Registered Accounts</label><br><label style="font-size: 100px;">3</label><br><a href="#" style="text-decoration: none; color: #fff;">see more <i class='bx bx-right-arrow-alt'></i></a></div>
+              <div class="col bixi" style="background-color: #AED5FF; padding: 3%; color: #fff; text-align: center; margin: 2%; border-radius: 5px;"><label style="font-size: 20px;">Registered Accounts</label><br><label style="font-size: 100px;"><?php echo $fetchUsers['registered']?></label><br><a href="#" style="text-decoration: none; color: #fff;">see more <i class='bx bx-right-arrow-alt'></i></a></div>
               <div class="col bixi" style="background-color: #Fd8978; padding: 3%; color: #fff; text-align: center; margin: 2%; border-radius: 5px;"><label style="font-size: 20px;">Total Books Borrowed</label><br><label style="font-size: 100px;">2</label><br><a href="#" style="text-decoration: none; color: #fff;">see more <i class='bx bx-right-arrow-alt'></i></a></div>
-              <div class="col bixi" style="background-color: #7788F4; padding: 3%; color: #fff; text-align: center; margin: 2%; border-radius: 5px;"><label style="font-size: 20px;">Available Books</label><br><label style="font-size: 100px;">2</label><br><a href="#" style="text-decoration: none; color: #fff;">see more <i class='bx bx-right-arrow-alt'></i></a></div>
+              <div class="col bixi" style="background-color: #7788F4; padding: 3%; color: #fff; text-align: center; margin: 2%; border-radius: 5px;"><label style="font-size: 20px;">Available Books</label><br><label style="font-size: 100px;"><?php echo $fetchBooks['booksCount']?></label><br><a href="#" style="text-decoration: none; color: #fff;">see more <i class='bx bx-right-arrow-alt'></i></a></div>
               </div>
           </section>
           <script>
