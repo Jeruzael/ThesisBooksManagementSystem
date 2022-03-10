@@ -69,18 +69,22 @@ create table teamsuser(
 	userId int primary key auto_increment,
     userFirstname varchar(255) not null,
     userLastname varchar(255) not null,
+    userNumber varchar(255) not null,
+    userStatus varchar(255) default "active",
+    userTBorrow int default 0,
+    userTReturn int default 0,
     userStamp datetime default current_timestamp
     
 );
-insert into teamsuser(userfirstname,userlastname)
+insert into teamsuser(userfirstname,userlastname,userNumber)
 values
-("jeffrix", "briol"),
-("danica", "cabullo"),
-("gabriel", "napoto"),
-("alexander", "caberto"),
-("kevin", "corpin"),
-("sean kim", "ebarle"),
-("jerusael", "dumale");
+("jeffrix", "briol","20190800-C"),
+("danica", "cabullo","20190800-C"),
+("gabriel", "napoto","20190800-C"),
+("alexander", "caberto","20190800-C"),
+("kevin", "corpin","20190800-C"),
+("sean kim", "ebarle","20190800-C"),
+("jerusael", "dumale","20190800-C");
 
 create table thesisrequest(
 	requestId int primary key auto_increment,
@@ -98,6 +102,14 @@ values
 (6,1),
 (3,3);
 
+update thesisLibrary
+set bookStatus = "unavailable"
+where bookId = 6;
+
+update teamsuser
+set userTBorrow = +1
+where userId = 1;
+
 create table thesisborrowed(
 	borrowedId int primary key auto_increment,
     borrowedRequest int not null,
@@ -105,16 +117,7 @@ create table thesisborrowed(
     borrowedRemarks varchar(255) default "in borrowed",
     borrowedStamp datetime default current_timestamp
 );
-
 insert into thesisborrowed(borrowedRequest)
-values
-(1),
-(2),
-(3),
-(4);
-
-insert into thesisborrowed(borrowedRequest,borrowedReturn,borrowedRemarks)
-values
-(5,"2022-03-16","returned late");
+values(4);
 
 
