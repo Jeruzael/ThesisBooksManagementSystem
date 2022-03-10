@@ -64,3 +64,36 @@ values
 ("world break","serrano, jayson, estabaya & dan brandon","2018-03-01","prof. genalyn d. villafuerte"),
 ("web-based library system with mobile application sms / email verification and notification, with an interactive library book map of legal education board","guerrero, maria kriana, lambo, jerwin, santos, mark louie, vicente & maria patricia shayne","2019-03-01","prof. vicente tabacolde"),
 ("web-based courier tracking system for xeud corporation","ferrer, neve yasmin, ishida, marv, santos, anne & juan, aldrin","2019-03-01","prof. michael tan");
+
+create table teamsuser(
+	userId int primary key auto_increment,
+    userFirstname varchar(255) not null,
+    userLastname varchar(255) not null,
+    userStamp datetime default current_timestamp
+    
+);
+insert into teamsuser(userfirstname,userlastname)
+values
+("jeffrix", "briol"),
+("danica", "cabullo"),
+("gabriel", "napoto"),
+("alexander", "caberto"),
+("kevin", "corpin"),
+("sean kim", "ebarle"),
+("jerusael", "dumale");
+
+create table thesisrequest(
+	requestId int primary key auto_increment,
+    requestBookId int not null,
+    requesterId int not null,
+    requestStamp datetime default current_timestamp,
+    foreign key (requestBookId) REFERENCES thesisLibrary(bookId),
+    foreign key (requesterId) REFERENCES teamsuser(userId)
+);
+insert into thesisrequest(requestBookId,requesterId)
+values
+(1,5),
+(5,6),
+(2,4),
+(6,1),
+(3,3);
