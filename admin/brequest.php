@@ -93,7 +93,7 @@
                   </thead>
                   <tbody>
                     <?php
-                    $dataQuery = "SELECT *, DATE_FORMAT(requestStamp, '%M %d, %Y') as borrowDate FROM thesisrequest INNER JOIN thesisLibrary ON thesisrequest.requestBookId = thesisLibrary.bookId INNER JOIN teamsuser ON thesisrequest.requesterId = teamsuser.userId";
+                    $dataQuery = "SELECT *, DATE_FORMAT(requestStamp, '%M %d, %Y') as borrowDate FROM thesisrequest INNER JOIN thesisLibrary ON thesisrequest.requestBookId = thesisLibrary.bookId INNER JOIN teamsuser ON thesisrequest.requesterId = teamsuser.userId where thesisLibrary.bookStatus = 'available' order by requestId asc";
                     $data = mysqli_query($connect, $dataQuery);
                     for($i = 0; $row = mysqli_fetch_array($data); $i++){
                     ?>
