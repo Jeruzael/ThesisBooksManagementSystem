@@ -87,6 +87,7 @@
               <div class="container-fluid" style="padding: 5%; overflow-x: scroll; ">
                 <table style="width:100%; border-collapse:collapse; margin:25px 0; font-size:0.9em; border-radius:5px 5px 0 0;min-width: 1000px;">
                   <thead style="background-color: #7788F4; color: #FFF; text-align: center; height: 50px; vertical-align: middle;">
+                    <th>User ID</th>  
                     <th>User Number</th>
                     <th>Name</th>
                     <th>Status</th>
@@ -95,46 +96,21 @@
                     <th>Action</th>
                   </thead>
                   <tbody>
+                  <?php
+                    $dataQuery = "SELECT * FROM teamsuser";
+                    $data = mysqli_query($connect, $dataQuery);
+                    for($i = 0; $row = mysqli_fetch_array($data); $i++){
+                    ?>
                     <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>20190391-S</td>
-                      <td>Danica Cabullo</td>
-                      <td>Active</td>
-                      <td>4</td>
-                      <td>4</td>
+                      <td><?php echo $row['userId']; ?></td>
+                      <td><?php echo $row['userNumber']; ?></td>
+                      <td><?php echo ucwords($row['userLastname']); ?>, <?php echo ucwords($row['userFirstname']); ?></td>
+                      <td><?php echo ucwords($row['userStatus']); ?></td>
+                      <td><?php echo $row['userTBorrow']; ?></td>
+                      <td><?php echo $row['userTReturn']; ?></td>
                       <td><button style="padding: 5px; width: 80px; color: #fff; background-color: #FD8978; border: #FD8978;">Deactivate</button></td>
                     </tr>
-                    <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>20190391-S</td>
-                      <td>Danica Cabullo</td>
-                      <td>Active</td>
-                      <td>4</td>
-                      <td>4</td>
-                      <td><button style="padding: 5px; width: 80px; color: #fff; background-color: #FD8978; border: #FD8978;">Deactivate</button></td>
-                    </tr>
-                    <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>20190391-S</td>
-                      <td>Danica Cabullo</td>
-                      <td>Active</td>
-                      <td>4</td>
-                      <td>4</td>
-                      <td><button style="padding: 5px; width: 80px; color: #fff; background-color: #FD8978; border: #FD8978;">Deactivate</button></td>
-                    </tr>
-                    <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>20190391-S</td>
-                      <td>Danica Cabullo</td>
-                      <td>Active</td>
-                      <td>4</td>
-                      <td>4</td>
-                      <td><button style="padding: 5px; width: 80px; color: #fff; background-color: #FD8978; border: #FD8978;">Deactivate</button></td>
-                    </tr>
-                    <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>20190391-S</td>
-                      <td>Danica Cabullo</td>
-                      <td>Active</td>
-                      <td>4</td>
-                      <td>4</td>
-                      <td><button style="padding: 5px; width: 80px; color: #fff; background-color: #FD8978; border: #FD8978;">Deactivate</button></td>
-                    </tr>
+                    <?php } ?>
                   </tbody>
                 </table>
               </div>
