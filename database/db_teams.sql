@@ -47,6 +47,7 @@ create table thesisLibrary(
     bookCover varchar(100) default "bookdefaultcover.png",
     bookTitle varchar(255) not null,
     bookAuthor varchar(255) not null,
+    bookProfessor varchar(255),
     bookPublished date not null,
     bookStatus varchar(50) default "available",
     bookStamp datetime default current_timestamp
@@ -54,3 +55,12 @@ create table thesisLibrary(
 insert into thesisLibrary(bookTitle,bookAuthor,bookPublished)
 values
 ("cyber-physical security of a chemical plant","prakash rao dunaka","2017-06-29");
+
+insert into thesisLibrary(bookTitle,bookAuthor,bookPublished,bookProfessor)
+values
+("ziware mobile virtualbox - mobile application","kevin g. tolentino & jon michael r. zulueta","2013-04-01","prof. jonathan velarde"),
+("yungib","caranto, maria jessieka, diaz, jean carlo & ombrog, rose","2018-03-01","prof. genalyn d. villafuerte"),
+("x10 excel microsoft office excel 2010 computer aided instruction","balanon, bryan, bronola, ronjie, mahagnay, sheam japhet & maquinana, lywin","2012-03-01","prof. jonathan velarde"),
+("world break","serrano, jayson, estabaya & dan brandon","2018-03-01","prof. genalyn d. villafuerte"),
+("web-based library system with mobile application sms / email verification and notification, with an interactive library book map of legal education board","guerrero, maria kriana, lambo, jerwin, santos, mark louie, vicente & maria patricia shayne","2019-03-01","prof. vicente tabacolde"),
+("web-based courier tracking system for xeud corporation","ferrer, neve yasmin, ishida, marv, santos, anne & juan, aldrin","2019-03-01","prof. michael tan");

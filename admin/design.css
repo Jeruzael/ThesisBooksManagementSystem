@@ -249,6 +249,9 @@ input.upload:hover{
     div.signin{
         width: 90%;
     }
+    div.searchbox{
+        padding: 0px;
+    }
 }
 @media (max-width: 850px){
     div.signin{

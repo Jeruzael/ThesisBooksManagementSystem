@@ -81,7 +81,7 @@
           </div>
           <section class="home-section"style="padding: 5%;">
               <div class="text" style="font-size: 40px; color: #7788F4;">Books</div>
-              <div class="container-fluid row">
+              <div class="container-fluid row searchbox" style="padding-left:20%;padding-right:20%;">
               <div class="search__container col-md-9">
                 <input class="search__input" type="text" placeholder="Search thesis books...">
               </div>
@@ -107,7 +107,7 @@
                     ?>
                     <tr style="border-bottom:2px solid whitesmoke;">
                       <td><?php echo $row['bookId']; ?></td>
-                      <td><?php echo ucwords($row['bookTitle']); ?></td>
+                      <td style="text-align:left; width:600px"><?php echo ucwords($row['bookTitle']); ?></td>
                       <td><?php echo $row['publish']; ?></td>
                       <td><img class="img-fluid" style="height: 50px;" src="../resources/<?php echo $row['bookCover']; ?>"/></td>
                       <td><?php echo ucwords($row['bookStatus']); ?></td>
