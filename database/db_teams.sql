@@ -47,12 +47,10 @@ create table thesisLibrary(
     bookCover varchar(100) default "bookdefaultcover.png",
     bookTitle varchar(255) not null,
     bookAuthor varchar(255) not null,
-    bookDescription varchar(255),
     bookPublished date not null,
     bookStatus varchar(50) default "available",
     bookStamp datetime default current_timestamp
 );
-insert into thesisLibrary(bookTitle,bookAuthor,bookDescription,bookPublished)
+insert into thesisLibrary(bookTitle,bookAuthor,bookPublished)
 values
-("cyber-physical security of a chemical plant","prakash rao dunaka","the increasing number of cyber attacks on industries demands immediate attention for providing more secure mechanisms to safeguard industries and minimize
-risks.","2017-06-29");
+("cyber-physical security of a chemical plant","prakash rao dunaka","2017-06-29");
