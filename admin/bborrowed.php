@@ -7,13 +7,13 @@
 <html>
     <head>
 
-        <title>Books</title>
+        <title>Borrowed History</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="icon" type="png" href="../resources/logo2.png"/>
+        <link rel="icon" type="png" href="../resources/<?php echo $fetchLogo['logo_4']?>"/>
         <link rel="stylesheet" type="text/css" href="design.css"/>
         
     </head>
@@ -84,54 +84,28 @@
               <div class="container-fluid" style="padding: 5%; overflow-x: scroll; ">
                 <table style="width:100%; border-collapse:collapse; margin:25px 0; font-size:0.9em; border-radius:5px 5px 0 0;min-width: 1000px;">
                   <thead style="background-color: #7788F4; color: #FFF; text-align: center; height: 50px; vertical-align: middle;">
-                    <th>Reference #</th>
-                    <th>Book Borrowed</th>
+                    <th>Request ID</th>
+                    <th>Book Title</th>
                     <th>Borrower</th>
                     <th>Borrowing Date</th>
                     <th>Date Returned</th>
-                    <th>Status</th>
+                    <th>Remarks</th>
                   </thead>
                   <tbody>
+                  <?php
+                    $dataQuery = "SELECT *, DATE_FORMAT(thesisrequest.requestStamp, '%M %d, %Y') as borrowDate, DATE_FORMAT(borrowedReturn, '%M %d, %Y') as returnDate FROM thesisborrowed INNER JOIN thesisrequest ON thesisborrowed.borrowedRequest = thesisrequest.requestId INNER JOIN thesisLibrary ON thesisrequest.requestBookId = thesisLibrary.bookId INNER JOIN teamsuser ON thesisrequest.requesterId = teamsuser.userId";
+                    $data = mysqli_query($connect, $dataQuery);
+                    for($i = 0; $row = mysqli_fetch_array($data); $i++){
+                    ?>
                     <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>2021A001</td>
-                      <td>Methods for Java Programming</td>
-                      <td>Danica Cabullo</td>
-                      <td>12/12/21</td>
-                      <td>12/17/21</td>
-                      <td>Returned</td>
+                      <td><?php echo $row['requestId']; ?></td>
+                      <td style="text-align: left; width: 500px;"><?php echo ucwords($row['bookTitle']); ?></td>
+                      <td style="text-align: left;"><?php echo ucwords($row['userLastname']); ?>, <?php echo ucwords($row['userFirstname']); ?></td>
+                      <td><?php echo $row['borrowDate']; ?></td>
+                      <td><?php echo $row['returnDate']; ?></td>
+                      <td><?php echo $row['borrowedRemarks']; ?></td>
                     </tr>
-                    <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>2021A001</td>
-                      <td>Methods for Java Programming</td>
-                      <td>Danica Cabullo</td>
-                      <td>12/12/21</td>
-                      <td>12/17/21</td>
-                      <td>Returned</td>
-                    </tr>
-                    <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>2021A001</td>
-                      <td>Methods for Java Programming</td>
-                      <td>Danica Cabullo</td>
-                      <td>12/12/21</td>
-                      <td>12/17/21</td>
-                      <td>Returned</td>
-                    </tr>
-                    <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>2021A001</td>
-                      <td>Methods for Java Programming</td>
-                      <td>Danica Cabullo</td>
-                      <td>12/12/21</td>
-                      <td>12/17/21</td>
-                      <td>Returned</td>
-                    </tr>
-                    <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>2021A001</td>
-                      <td>Methods for Java Programming</td>
-                      <td>Danica Cabullo</td>
-                      <td>12/12/21</td>
-                      <td>12/17/21</td>
-                      <td>Returned</td>
-                    </tr>
+                    <?php } ?>
                   </tbody>
                 </table>
               </div>
