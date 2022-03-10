@@ -97,3 +97,24 @@ values
 (2,4),
 (6,1),
 (3,3);
+
+create table thesisborrowed(
+	borrowedId int primary key auto_increment,
+    borrowedRequest int not null,
+    borrowedReturn datetime,
+    borrowedRemarks varchar(255) default "in borrowed",
+    borrowedStamp datetime default current_timestamp
+);
+
+insert into thesisborrowed(borrowedRequest)
+values
+(1),
+(2),
+(3),
+(4);
+
+insert into thesisborrowed(borrowedRequest,borrowedReturn,borrowedRemarks)
+values
+(5,"2022-03-16","returned late");
+
+
