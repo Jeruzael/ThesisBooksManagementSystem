@@ -108,38 +108,6 @@
                       <td>Available</td>
                       <td><button style="padding: 5px; width: 70px; color: #fff; background-color: #FD8978; border: #FD8978;"><i class='bx bx-pencil' ></i>Edit</button></td>
                     </tr>
-                    <tr>
-                      <td>001</td>
-                      <td>978-3-16-148410-0</td>
-                      <td>Methods for Java Programming</td>
-                      <td><img class="img-fluid" style="height: 50px;" src="../resources/logo3.png"/></td>
-                      <td>Available</td>
-                      <td><button style="padding: 5px; width: 70px; color: #fff; background-color: #FD8978; border: #FD8978;"><i class='bx bx-pencil' ></i>Edit</button></td>
-                    </tr>
-                    <tr>
-                      <td>001</td>
-                      <td>978-3-16-148410-0</td>
-                      <td>Methods for Java Programming</td>
-                      <td><img class="img-fluid" style="height: 50px;" src="../resources/logo3.png"/></td>
-                      <td>Available</td>
-                      <td><button style="padding: 5px; width: 70px; color: #fff; background-color: #FD8978; border: #FD8978;"><i class='bx bx-pencil' ></i>Edit</button></td>
-                    </tr>
-                    <tr>
-                      <td>001</td>
-                      <td>978-3-16-148410-0</td>
-                      <td>Methods for Java Programming</td>
-                      <td><img class="img-fluid" style="height: 50px;" src="../resources/logo3.png"/></td>
-                      <td>Available</td>
-                      <td><button style="padding: 5px; width: 70px; color: #fff; background-color: #FD8978; border: #FD8978;"><i class='bx bx-pencil' ></i>Edit</button></td>
-                    </tr>
-                    <tr>
-                      <td>001</td>
-                      <td>978-3-16-148410-0</td>
-                      <td>Methods for Java Programming</td>
-                      <td><img class="img-fluid" style="height: 50px;" src="../resources/logo3.png"/></td>
-                      <td>Available</td>
-                      <td><button style="padding: 5px; width: 70px; color: #fff; background-color: #FD8978; border: #FD8978;"><i class='bx bx-pencil' ></i>Edit</button></td>
-                    </tr>
                   </tbody>
                 </table>
               </div>
