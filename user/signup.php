@@ -53,7 +53,7 @@
                     </ul>
                     <div class="d-flex">
                         <a href="signin.php" style="text-decoration:none;"><button class="form-control me-2" style="background-color: <?php echo $fetchColor['color_9']?>;border: 1px solid <?php echo $fetchColor['color_9']?>;padding:15px;">Sign in </button></a>
-                        <a href="signup.php" style="text-decoration:none;"><button class="btn" style="width:200px;background-color: <?php echo $fetchColor['color_5']?>;border: 1px solid <?php echo $fetchColor['color_5']?>;padding:15px;color:#fff;border-radius: 12px;">Sing up</button></a>
+                        <a href="signup.php" style="text-decoration:none;"><button class="btn" style="width:200px;background-color: <?php echo $fetchColor['color_5']?>;border: 1px solid <?php echo $fetchColor['color_5']?>;padding:15px;color:#fff;border-radius: 12px;">Sign up</button></a>
                     </div>
                 </div>
             </div>
@@ -85,7 +85,7 @@
                         <input style="font-size:8pt; padding:10px;" name="password" type="password" ondrop="return false;" oninvalid="IninvalidMsg(this);" oninput="IninvalidMsg(this);" onpaste="return false;" class="form-control" placeholder="Password" required="Required">
                         
 
-                        <input style="margin-top:20px; font-size:9pt; padding:10px; width:100%; background-color: #7788F4; border-color: #7788F4;" name="doctor_login" type="submit" value="Sign un" class="btn btn-primary">
+                        <input style="margin-top:20px; font-size:9pt; padding:10px; width:100%; background-color: #7788F4; border-color: #7788F4;" name="doctor_login" type="submit" value="Sign in" class="btn btn-primary">
                     </form>
                     <p>Already have an account?<a href="signin.html"> Sign in</a></p>
                 </div>

@@ -1,34 +1,40 @@
+<?php
+    require "../data/control.php";
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
 
-        <title>Books</title>
+        <title>Profile</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="icon" type="png" href="../resources/logo2.png"/>
+        <link rel="icon" type="png" href="../resources/<?php echo $fetchLogo['logo_4']?>"/>
         <link rel="stylesheet" type="text/css" href="design.css"/>
         
     </head>
-    <body>
-        <div class="sidebar">
+    <body style="background-color: <?php echo $fetchColor['color_9']?>;">
+        <div class="sidebar" style="background-color: <?php echo $fetchColor['color_5']?>">
             <div class="logo-details">
-              <img src="../resources/logo3.png" class="img-fluid" style="height: 50px;">
-                <div class="logo_name">Teams</div>
+              <img src="../resources/<?php echo $fetchLogo['logo_5']?>" class="img-fluid" style="height: 50px;">
                 <i class='bx bx-menu' id="btn" ></i>
             </div>
             <ul class="nav-list">
+              
               <li>
-                <a href="dashboard.html">
-                  <i class='bx bx-home' ></i>
-                  <span class="links_name">Dashboard</span>
-                </a>
-                <span class="tooltip">Dashboard</span>
-              </li>
+               <a href="dashboard.php">
+                 <i class='bx bx-home' ></i>
+                 <span class="links_name">Dashboard</span>
+               </a>
+               <span class="tooltip">Dashboard</span>
+             </li>
+             
              <li>
-               <a href="profile.html">
+               <a href="profile.php">
                 <i class='bx bx-user-circle' ></i>
                  <span class="links_name">Profile</span>
                </a>
@@ -43,14 +49,14 @@
                      <div class="job">Programmer</div>
                    </div>
                  </div>
-                 <i class='bx bx-log-out' id="log_out" ></i>
+                 <i class='bx bx-log-out' id="log_out" style="background: <?php echo $fetchColor['color_5']?>;"></i>
              </li>
             </ul>
           </div>
           <section class="home-section"style="padding: 5%;">
               <div class="text" style="font-size: 40px; color: #FD8978;">Edit Profile</div>
               <div class="container-fluid" style="text-align: center;">
-                <img class="img-fluid" src="../resources/nano.jpg" style="height: 200px; border-radius: 50%;"/><br>
+                <img class="img-fluid" src="../resources/avatar_0.png" style="height: 200px; border-radius: 50%;"/><br>
                 <input class="upload" type="submit" style="padding: 10px; margin: 10px; border: 1px solid #FD8978; color: #FD8978; background-color: #fff; width: 200px;" value="upload"/>
               </div>
               <div class="container-fluid row" style="padding-left: 15%; padding-right: 15%;">

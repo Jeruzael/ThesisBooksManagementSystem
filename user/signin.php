@@ -53,7 +53,7 @@
                     </ul>
                     <div class="d-flex">
                         <a href="signin.php" style="text-decoration:none;"><button class="form-control me-2" style="background-color: <?php echo $fetchColor['color_9']?>;border: 1px solid <?php echo $fetchColor['color_9']?>;padding:15px;">Sign in </button></a>
-                        <a href="signup.php" style="text-decoration:none;"><button class="btn" style="width:200px;background-color: <?php echo $fetchColor['color_5']?>;border: 1px solid <?php echo $fetchColor['color_5']?>;padding:15px;color:#fff;border-radius: 12px;">Sing up</button></a>
+                        <a href="signup.php" style="text-decoration:none;"><button class="btn" style="width:200px;background-color: <?php echo $fetchColor['color_5']?>;border: 1px solid <?php echo $fetchColor['color_5']?>;padding:15px;color:#fff;border-radius: 12px;">Sign up</button></a>
                     </div>
                 </div>
             </div>
