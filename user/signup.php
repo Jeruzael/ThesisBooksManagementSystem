@@ -58,20 +58,39 @@
                 </div>
             </div>
         </nav>
-        <div class="container-fluid row">
-            <div class="col-md" style="padding:10%;">
-                <div class="search__container"><input class="search__input" type="text" placeholder="Search Thesis Books..."></div>
-                <p style="font-weight: 700;font-size: 50px;line-height: 59px;">Thesis <label style="color: <?php echo $fetchColor['color_7']?>;">Archiving</label> System</p>
-                <p style="font-weight: 400;font-size: 30px;line-height: 45px;">An interactive books management system for the Computer Studies Department.</p>
-            </div>
-            <div class="col-md-6"><img class="img-fluid" src="../resources/<?php echo $fetchPoster['poster_1']?>"/></div>
-        </div>
-        <div class="container-fluid" style="font-weight: 700;font-size: 45px;line-height: 53px;text-align: center; padding:10%;">Thesis Archiving System is the new home for your learning needs from the thesis books
-        <p style="font-weight: 400;font-size: 30px;line-height: 45px; margin-top:50px;">Connect, enable learning, and share knowledge</p>
-        <button style="border-radius: 12px;background-color:<?php echo $fetchColor['color_5']?>;border: 1px solid <?php echo $fetchColor['color_5']?>;font-weight: 400;font-size: 20px;line-height: 35px;padding:20px;color:#fff;width:300px;margin-top:50px;">Borrow books</button>
-        </div>
+        <!-- main container -->
+        <div class="container-fluid row signin">
 
-        <!-- footer -->
+            <!-- left side -->
+            <div style="padding:10%; background-color:#DDE2FD;" class="col-md-6">
+                <img style="margin-top:20px;" class="img-fluid" src="../resources/adminposter.png"/>
+            </div>
+
+            <!-- right side -->
+            <div style="padding: 50px;" class="col-md-6">
+                <img src="../resources/logo1.png" class="img-fluid" style="height: 50px;"/>
+                <h3 style="font-weight: 700; margin-top: 20%;">Sign up</h3>
+                <div class="form-outline">
+                    <form action="#" method="post">
+                        <label style="margin-top:30px; font-size:9pt;" class="FormLabel form-label"><i class='bx bx-envelope'></i> First Name</label>
+                        <input style="font-size:8pt; padding:10px;" name="firstname" type="text" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Firstname" required="Required">
+
+                        <label style="margin-top:30px; font-size:9pt;" class="FormLabel form-label"><i class='bx bx-envelope'></i> Last Name</label>
+                        <input style="font-size:8pt; padding:10px;" name="lastname" type="text" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Lastname" required="Required">
+
+                        <label style="margin-top:30px; font-size:9pt;" class="FormLabel form-label"><i class='bx bx-envelope'></i> Email Address</label>
+                        <input style="font-size:8pt; padding:10px;" name="email" type="email" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Email Address" required="Required">
+                        
+                        <label style="margin-top:20px; font-size:9pt;" class="FormLabel form-label"><i class='bx bx-lock-alt'></i> Password</label>
+                        <input style="font-size:8pt; padding:10px;" name="password" type="password" ondrop="return false;" oninvalid="IninvalidMsg(this);" oninput="IninvalidMsg(this);" onpaste="return false;" class="form-control" placeholder="Password" required="Required">
+                        
+
+                        <input style="margin-top:20px; font-size:9pt; padding:10px; width:100%; background-color: #7788F4; border-color: #7788F4;" name="doctor_login" type="submit" value="Sign un" class="btn btn-primary">
+                    </form>
+                    <p>Already have an account?<a href="signin.html"> Sign in</a></p>
+                </div>
+            </div>
+        </div>
         <div class="container-fluid row" style="background-color: <?php echo $fetchColor['color_7']?>;color:#fff;padding:0px;margin:0px;">
         <div class="col-md" style="padding:5%;">
             <img class="img-fluid" src="../resources/<?php echo $fetchLogo['logo_5']?>" style="height: 100px;"/>
