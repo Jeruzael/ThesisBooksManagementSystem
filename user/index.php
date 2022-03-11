@@ -42,13 +42,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item" style="margin-left:40px;">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item" style="margin-left:40px;">
-                            <a class="nav-link" href="#">About us</a>
+                            <a class="nav-link" href="about.php">About us</a>
                         </li>
                         <li class="nav-item" style="margin-left:40px;">
-                            <a class="nav-link" href="#">Support</a>
+                            <a class="nav-link" href="support.php">Support</a>
                         </li>
                     </ul>
                     <form class="d-flex">
