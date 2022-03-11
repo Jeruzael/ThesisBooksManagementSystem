@@ -7,13 +7,13 @@
 <html>
     <head>
 
-        <title>Books</title>
+        <title>Teams Profile</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="icon" type="png" href="../resources/logo2.png"/>
+        <link rel="icon" type="png" href="../resources/<?php echo $fetchLogo['logo_4']?>"/>
         <link rel="stylesheet" type="text/css" href="design.css"/>
         
     </head>
@@ -75,7 +75,7 @@
           <section class="home-section"style="padding: 5%;">
               <div class="text" style="font-size: 40px; color: #7788F4;">Edit Profile</div>
               <div class="container-fluid" style="text-align: center;">
-                <img class="img-fluid" src="../resources/nano.jpg" style="height: 200px; border-radius: 50%;"/><br>
+                <img class="img-fluid" src="../resources/avatar_0.png" style="height: 200px; border-radius: 50%;"/><br>
                 <input class="upload" type="submit" style="padding: 10px; margin: 10px; border: 1px solid #7788F4; color: #7788F4; background-color: #fff; width: 200px;" value="upload"/>
               </div>
               <div class="container-fluid row" style="padding-left: 15%; padding-right: 15%;">
