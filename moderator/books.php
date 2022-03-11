@@ -20,7 +20,7 @@
     <body style="background-color: <?php echo $fetchColor['color_9']?>">
         <div class="sidebar" style="background-color: <?php echo $fetchColor['color_7']?>">
             <div class="logo-details">
-              <img src="../resources/<?php echo $fetchLogo['logo_1']?>" class="img-fluid" style="height: 60px;">
+              <img src="../resources/<?php echo $fetchLogo['logo_5']?>" class="img-fluid" style="height: 60px;">
                 <i class='bx bx-menu' id="btn" ></i>
             </div>
             <ul class="nav-list">
@@ -51,13 +51,6 @@
                 <li><a href="blost.php"><i class='bx bx-chevron-right' ></i>Lost Books</a></li>
                </ul>
                <span class="tooltip">Books Management</span>
-             </li>
-             <li>
-               <a href="user.php">
-                <i class='bx bx-group' ></i>
-                 <span class="links_name">Manage User</span>
-               </a>
-               <span class="tooltip">Manage User</span>
              </li>
              <li>
                <a href="profile.php">

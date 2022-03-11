@@ -25,14 +25,14 @@
             </div>
             <ul class="nav-list">
               <li>
-                <a href="dashboard.html">
+                <a href="dashboard.php">
                   <i class='bx bx-home'></i>
                   <span class="links_name">Home</span>
                 </a>
                  <span class="tooltip">Home</span>
               </li>
               <li>
-               <a href="books.html">
+               <a href="books.php">
                  <i class='bx bx-book' ></i>
                  <span class="links_name">Book</span>
                </a>
@@ -45,15 +45,15 @@
                  
                </a>
                <ul class="book-show">
-                <li><a href="brequest.html"><i class='bx bx-chevron-right' ></i>Book Request</a></li>
-                <li><a href="bborrowed.html"><i class='bx bx-chevron-right' ></i>Borrowed Books</a></li>
-                <li><a href="blate.html"><i class='bx bx-chevron-right' ></i>Late Returnees</a></li>
-                <li><a href="blast.html"><i class='bx bx-chevron-right' ></i>Lost Books</a></li>
+                <li><a href="brequest.php"><i class='bx bx-chevron-right' ></i>Book Request</a></li>
+                <li><a href="bborrowed.php"><i class='bx bx-chevron-right' ></i>Borrowed Books</a></li>
+                <li><a href="blate.php"><i class='bx bx-chevron-right' ></i>Late Returnees</a></li>
+                <li><a href="blost.php"><i class='bx bx-chevron-right' ></i>Lost Books</a></li>
                </ul>
                <span class="tooltip">Books Management</span>
              </li>
              <li>
-               <a href="profile.html">
+               <a href="profile.php">
                 <i class='bx bx-user-circle' ></i>
                  <span class="links_name">Profile</span>
                </a>
