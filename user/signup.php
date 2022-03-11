@@ -42,7 +42,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item" style="margin-left:40px;">
-                            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                            <a class="nav-link" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item" style="margin-left:40px;">
                             <a class="nav-link" href="about.php">About us</a>
@@ -62,13 +62,13 @@
         <div class="container-fluid row signin">
 
             <!-- left side -->
-            <div style="padding:10%; background-color:#DDE2FD;" class="col-md-6">
-                <img style="margin-top:20px;" class="img-fluid" src="../resources/adminposter.png"/>
+            <div style="padding:10%; background-color:<?php echo $fetchBackground['background_3']?>;" class="col-md-6">
+                <img style="margin-top:20px;" class="img-fluid" src="../resources/<?php echo $fetchPoster['poster_4']?>"/>
             </div>
 
             <!-- right side -->
             <div style="padding: 50px;" class="col-md-6">
-                <img src="../resources/logo1.png" class="img-fluid" style="height: 50px;"/>
+                <img src="../resources/<?php echo $fetchLogo['logo_1']?>" class="img-fluid" style="height: 50px;"/>
                 <h3 style="font-weight: 700; margin-top: 20%;">Sign up</h3>
                 <div class="form-outline">
                     <form action="#" method="post">

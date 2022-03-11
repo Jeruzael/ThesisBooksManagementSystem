@@ -38,10 +38,11 @@ values("poster_1.png","poster_2.png", "poster_3.png", "poster_4.png","poster_5.p
 create table teamsBackground(
 	backgroundId int primary key auto_increment,
     background_1 VARCHAR(50),
-    background_2 VARCHAR(50)
+    background_2 VARCHAR(50),
+    background_3 VARCHAR(50)
 );
-insert into teamsBackground(background_1,background_2)
-values("rgba(119, 136, 244, 0.21)","rgba(174, 213, 255, 0.53)");
+insert into teamsBackground(background_1,background_2,background_3)
+values("rgba(119, 136, 244, 0.21)","rgba(174, 213, 255, 0.53)","rgba(253, 137, 120, 0.64)");
 
 create table thesisLibrary(
 	bookId int primary key auto_increment,
