@@ -2,7 +2,7 @@
 <html>
     <head>
 
-        <title>Books</title>
+        <title>Dashboard</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -76,66 +76,13 @@
             </ul>
           </div>
           <section class="home-section"style="padding: 5%;">
-              <div class="text" style="font-size: 40px; color: #7788F4;">Lost Books</div>
-              <div class="container-fluid" style="padding: 5%; overflow-x: scroll; ">
-                <table style="width:100%; border-collapse:collapse; margin:25px 0; font-size:0.9em; border-radius:5px 5px 0 0;min-width: 1000px;">
-                  <thead style="background-color: #7788F4; color: #FFF; text-align: center; height: 50px; vertical-align: middle;">
-                    <th>Reference #</th>
-                    <th>Book Borrowed</th>
-                    <th>Borrower</th>
-                    <th>Borrowing Date</th>
-                    <th>Date Returned</th>
-                    <th>Payment Status</th>
-                  </thead>
-                  <tbody>
-                    <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>2021A001</td>
-                      <td>Methods for Java Programming</td>
-                      <td>Danica Cabullo</td>
-                      <td>12/12/21</td>
-                      <td>12/17/21</td>
-                      <td>Paid</td>
-                    </tr>
-                    <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>2021A001</td>
-                      <td>Methods for Java Programming</td>
-                      <td>Danica Cabullo</td>
-                      <td>12/12/21</td>
-                      <td>12/17/21</td>
-                      <td>Paid</td>
-                    </tr>
-                    <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>2021A001</td>
-                      <td>Methods for Java Programming</td>
-                      <td>Danica Cabullo</td>
-                      <td>12/12/21</td>
-                      <td>12/17/21</td>
-                      <td>Paid</td>
-                    </tr>
-                    <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>2021A001</td>
-                      <td>Methods for Java Programming</td>
-                      <td>Danica Cabullo</td>
-                      <td>12/12/21</td>
-                      <td>12/17/21</td>
-                      <td>Paid</td>
-                    </tr>
-                    <tr style="border-bottom:2px solid whitesmoke;">
-                      <td>2021A001</td>
-                      <td>Methods for Java Programming</td>
-                      <td>Danica Cabullo</td>
-                      <td>12/12/21</td>
-                      <td>12/17/21</td>
-                      <td>Paid</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="pagination">
-                <ul> <!--pages or li are comes from javascript --> </ul>
+              <div class="text" style="font-size: 40px; color: #7788F4;">Dashboard</div>
+              <div class="container-fluid row">
+              <div class="col bixi" style="background-color: #AED5FF; padding: 3%; color: #fff; text-align: center; margin: 2%; border-radius: 5px;"><label style="font-size: 20px;">Registered Accounts</label><br><label style="font-size: 100px;">3</label><br><a href="#" style="text-decoration: none; color: #fff;">see more <i class='bx bx-right-arrow-alt'></i></a></div>
+              <div class="col bixi" style="background-color: #Fd8978; padding: 3%; color: #fff; text-align: center; margin: 2%; border-radius: 5px;"><label style="font-size: 20px;">Total Books Borrowed</label><br><label style="font-size: 100px;">2</label><br><a href="#" style="text-decoration: none; color: #fff;">see more <i class='bx bx-right-arrow-alt'></i></a></div>
+              <div class="col bixi" style="background-color: #7788F4; padding: 3%; color: #fff; text-align: center; margin: 2%; border-radius: 5px;"><label style="font-size: 20px;">Available Books</label><br><label style="font-size: 100px;">2</label><br><a href="#" style="text-decoration: none; color: #fff;">see more <i class='bx bx-right-arrow-alt'></i></a></div>
               </div>
           </section>
-          <script src="pagination.js"></script>
           <script>
           let sidebar = document.querySelector(".sidebar");
           let closeBtn = document.querySelector("#btn");
