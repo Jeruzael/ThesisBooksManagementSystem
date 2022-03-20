@@ -14,18 +14,23 @@ div.signin{
     margin-right:auto;
     border-radius:3px;
     box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.25);
+    border-radius:10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
 div.sidebar{
     position: fixed;
     left: 0;
     top: 0;
     height: 100%;
     width: 78px;
+    background: #7788F4;
     padding: 6px 14px;
     z-index: 99;
     transition: all 0.5s ease;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
 div.sidebar.open{
     width: 250px;
 }
@@ -96,12 +101,15 @@ div.sidebar.open ul.nav-list ul.book-show.show li a{
 }
 div.sidebar.open ul.nav-list ul.book-show.show li a:hover{
     color: #fff;
+    color: #7788F4;
 }
+
 div.sidebar li{
     position: relative;
     margin: 8px 0;
     list-style: none;
 }
+
 div.sidebar li span.tooltip{
     position: absolute;
     top: -20px;
@@ -118,6 +126,7 @@ div.sidebar li span.tooltip{
     pointer-events: none;
     transition: 0s;
 }
+
 div.sidebar li:hover span.tooltip{
     opacity: 1;
     pointer-events: auto;
@@ -128,11 +137,48 @@ div.sidebar li:hover span.tooltip{
 div.sidebar.open li span.tooltip{
     display: none;
 }
+
+div.sidebar input{
+    font-size: 15px;
+    color: #FFF;
+    font-weight: 400;
+    outline: none;
+    height: 50px;
+    width: 100%;
+    width: 50px;
+    border: none;
+    border-radius: 12px;
+    transition: all 0.5s ease;
+    background: #7788F4;
+}
+div.sidebar.open input{
+    padding: 0 20px 0 50px;
+    width: 100%;
+}
+div.sidebar i.bx-search{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 22px;
+    background: #7788F4;
+    color: #FFF;
+}
+div.sidebar.open i.bx-search:hover{
+    background: #1d1b31;
+    color: #FFF;
+}
+div.sidebar i.bx-search:hover{
+    background: #FFF;
+    color: #7788F4;
+}
+
 div.sidebar li a{
     display: flex;
     height: 100%;
     width: 100%;
     border-radius: 7px;
+    border-radius: 12px;
     align-items: center;
     text-decoration: none;
     transition: all 0.4s ease;
@@ -140,7 +186,9 @@ div.sidebar li a{
 }
 div.sidebar li a:hover{
     background: #AED5FF;
+    background: #FFF;
 }
+
 div.sidebar li a span.links_name{
     color: #fff;
     font-size: 15px;
@@ -158,6 +206,7 @@ div.sidebar li a:hover span.links_name,
 div.sidebar li a:hover i{
     transition: all 0.5s ease;
     color: #fff;
+    color: #7788F4;
 }
 div.sidebar li i{
     height: 50px;
@@ -219,6 +268,7 @@ div.sidebar.open li.profile #log_out{
 }
 section.home-section{
     position: relative;
+    background: #fff;
     min-height: 100vh;
     top: 0;
     left: 78px;
@@ -246,6 +296,7 @@ input.upload:hover{
     div.sidebar li span.tooltip{
         display: none;
     }
+
     div.signin{
         width: 90%;
     }
@@ -271,6 +322,15 @@ th{
 div.search__container{
     padding-top: 5%;
 }
+td{
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 9pt;
+    height: 50px;
+}
+div.search__container{
+    padding-top: 64px;
+}
 input.search__input{
     width: 100%;
     padding: 12px 24px;
@@ -280,18 +340,22 @@ input.search__input{
     line-height: 18px;
     color: #575756;
     background-color: #fff;
+    background-color: transparent;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-size: 18px 18px;
     background-position: 95% center;
     border-radius: 7px;
     border: 1px solid #fff;
+    border-radius: 50px;
+    border: 1px solid #575756;
     transition: all 250ms ease-in-out;
     backface-visibility: hidden;
     transform-style: preserve-3d;
 }
 input.search__input::placeholder{
     color: rgba(87, 87, 86, 0.8);
+    text-transform: uppercase;
     letter-spacing: 1.5px;
 }
 input.search__input:hover,
@@ -305,6 +369,7 @@ input.search__input:focus{
 }
 div.credits__container{
     padding-top: 5%;
+    margin-top: 24px;
 }
 div.pagination ul{
     width: 100%;
