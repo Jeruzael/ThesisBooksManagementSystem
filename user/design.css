@@ -275,7 +275,6 @@ input.search__input{
     width: 100%;
     padding: 12px 24px;
     background-color: transparent;
-    transition: transform 250ms ease-in-out;
     font-size: 14px;
     line-height: 18px;
     color: #575756;
@@ -286,9 +285,7 @@ input.search__input{
     background-position: 95% center;
     border-radius: 7px;
     border: 1px solid #fff;
-    transition: all 250ms ease-in-out;
     backface-visibility: hidden;
-    transform-style: preserve-3d;
 }
 input.search__input::placeholder{
     color: rgba(87, 87, 86, 0.8);
@@ -296,12 +293,9 @@ input.search__input::placeholder{
 }
 input.search__input:hover,
 input.search__input:focus{
-    padding: 12px 0;
     outline: 0;
     border: 1px solid transparent;
-    border-bottom: 1px solid #575756;
     border-radius: 0;
-    background-position: 100% center;
 }
 div.credits__container{
     padding-top: 5%;

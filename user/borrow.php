@@ -58,18 +58,40 @@
                 </div>
             </div>
         </nav>
-        <div class="container-fluid row">
-            <div class="col-md" style="padding:10%;">
-                <div class="search__container"><input class="search__input" type="text" placeholder="Search Thesis Books..."></div>
-                <p style="font-weight: 700;font-size: 50px;line-height: 59px;">Thesis <label style="color: <?php echo $fetchColor['color_7']?>;">Archiving</label> System</p>
-                <p style="font-weight: 400;font-size: 20px;line-height: 30px;">An interactive books management<br>system for the Computer Studies<br>Department.</p>
-            </div>
-            <div class="col-md-6"><img class="img-fluid" src="../resources/<?php echo $fetchPoster['poster_1']?>"/></div>
-        </div>
-        <div class="container-fluid" style="font-weight: 700;font-size: 45px;line-height: 53px;text-align: center; padding:10%;">Thesis Archiving System is the new home for your learning needs from the thesis books
-        <p style="font-weight: 400;font-size: 30px;line-height: 45px; margin-top:50px;">Connect, enable learning, and share knowledge</p>
-        <button style="border-radius: 12px;background-color:<?php echo $fetchColor['color_5']?>;border: 1px solid <?php echo $fetchColor['color_5']?>;font-weight: 400;font-size: 20px;line-height: 35px;padding:20px;color:#fff;width:300px;margin-top:50px;"><a href="borrow.php" style="text-decoration:none; color: #fff;">Borrow books</a></button>
-        </div>
+        <div class="container-fluid" style="padding-left:10%;padding-right:10%;padding-top:5%;padding-bottom:5%;">
+            <h3><b>Find Thesis Books</b></h3>
+            <div class="container-fluid" style="padding: 5%; overflow-x: scroll; ">
+                <table style="width:100%; border-collapse:collapse; margin:25px 0; font-size:0.9em; border-radius:5px 5px 0 0;min-width: 1000px;">
+                  <thead style="background-color: #7788F4; color: #FFF; text-align: center; height: 50px; vertical-align: middle;">
+                    <th>ID</th>
+                    <th>Book Title</th>
+                    <th>Date Published</th>
+                    <th>Cover Image</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </thead>
+                  <tbody>
+                    <?php
+                    $dataQuery = "SELECT *, DATE_FORMAT(bookPublished, '%M %Y') as publish FROM thesislibrary";
+                    $data = mysqli_query($connect, $dataQuery);
+                    for($i = 0; $row = mysqli_fetch_array($data); $i++){
+                    ?>
+                    <tr style="border-bottom:2px solid whitesmoke;">
+                      <td><?php echo $row['bookId']; ?></td>
+                      <td style="text-align:left; width:600px"><?php echo ucwords($row['bookTitle']); ?></td>
+                      <td><?php echo $row['publish']; ?></td>
+                      <td><img class="img-fluid" style="height: 50px;" src="../resources/<?php echo $row['bookCover']; ?>"/></td>
+                      <td><?php echo ucwords($row['bookStatus']); ?></td>
+                      <td><button style="padding: 5px; width: 70px; color: #fff; background-color: #FD8978; border: #FD8978;">Borrow</button></td>
+                    </tr>
+                    <?php } ?>
+                  </tbody>
+                </table>
+              </div>
+              <div class="pagination">
+                <ul> <!--pages or li are comes from javascript --> </ul>
+              </div>
+        </div>            
 
         <!-- footer -->
         <div class="container-fluid row" style="background-color: <?php echo $fetchColor['color_7']?>;color:#fff;padding:0px;margin:0px;">
