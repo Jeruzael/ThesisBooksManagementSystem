@@ -117,9 +117,19 @@ create table thesisborrowed(
     borrowedRequest int not null,
     borrowedReturn datetime,
     borrowedRemarks varchar(255) default "in borrowed",
-    borrowedStamp datetime default current_timestamp
+    borrowedStamp datetime default current_timestamp,
+    foreign key (borrowedRequest) REFERENCES thesisrequest(requestId)
 );
 insert into thesisborrowed(borrowedRequest)
 values(4);
+
+create table teamsadmin(
+	adminId int primary key auto_increment,
+    adminFirstname varchar(255) not null,
+    adminLastname varchar(255) not null,
+    adminEmail varchar(255) not null,
+    adminPassword varchar(255) not null,
+    adminStamp datetime default current_timestamp
+);
 
 
