@@ -51,6 +51,7 @@
                         <p style="margin-left:10px; margin-top:10px; font-size:14px; line-height: 21px;"><a href="forgot.php" style="color:<?php echo $fetchColor['color_7']?>; text-decoration:none;">Forgot Password?</a></p>
 
                         <input style="margin-top:20px; font-size: 22px; line-height: 33px; padding:10px; width:100%; background-color: <?php echo $fetchColor['color_5']?>; border-color: <?php echo $fetchColor['color_5']?>;" name="adminLogin" type="submit" value="Sign in" class="btn btn-primary">
+<<<<<<< HEAD
 
         <link rel="icon" type="png" href="../resources/logo2.png"/>
         <link rel="stylesheet" type="text/css" href="design.css"/>
@@ -76,15 +77,14 @@
                         <input style="margin-top:20px; font-size:9pt; padding:10px; width:100%; background-color: #FD8978; border-color: #FD8978;" name="doctor_login" type="submit" value="Sign in" class="btn btn-primary">
 
                     </form>
+=======
+>>>>>>> 83502b78f2255c0ef398d38e7d9f2c5c1ed74cdb
                 </div>
             </div>
-
+        
             <!-- right side -->
             <div style="padding:5%; background-color:<?php echo $fetchBackground['background_1']?>;" class="col-md-6">
                 <img style="margin-top: 45%;" class="img-fluid" src="../resources/<?php echo $fetchPoster['poster_2']?>"/>
-            <div style="padding:10%; background-color:#DDE2FD;" class="col-md-6">
-                <img style="margin-top:20px;" class="img-fluid" src="../resources/adminposter.png"/>
-            </div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
