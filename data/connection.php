@@ -3,7 +3,7 @@
     // global variables
     $servername = 'localhost';
     $username = 'root';
-    $password = '083098';
+    $password = '';
     $database = 'db_teams';
 
     // establish connection
