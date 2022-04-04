@@ -319,7 +319,6 @@ input.search__input{
     width: 100%;
     padding: 12px 24px;
     background-color: transparent;
-    transition: transform 250ms ease-in-out;
     font-size: 14px;
     line-height: 18px;
     color: #575756;
@@ -331,11 +330,13 @@ input.search__input{
     background-position: 95% center;
     border-radius: 7px;
     border: 1px solid #fff;
+<<<<<<< HEAD
+=======
     border-radius: 50px;
     border: 1px solid #575756;
     transition: all 250ms ease-in-out;
+>>>>>>> 085886aede63ae73d9c6e73f11ce2e77ad990d83
     backface-visibility: hidden;
-    transform-style: preserve-3d;
 }
 
 input.search__input::placeholder{
@@ -345,12 +346,9 @@ input.search__input::placeholder{
 }
 input.search__input:hover,
 input.search__input:focus{
-    padding: 12px 0;
     outline: 0;
     border: 1px solid transparent;
-    border-bottom: 1px solid #575756;
     border-radius: 0;
-    background-position: 100% center;
 }
 div.credits__container{
     padding-top: 5%;
