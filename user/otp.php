@@ -1,5 +1,9 @@
-<?php
-    require "../data/connection.php";
+    <?php
+    require "../teamsDataCenter/connection.php";
+    include_once("../tool.php");
+
+    session_start();
+    
 
     $backgroundQuery = "SELECT * FROM teamsbackground where backgroundId = 1";
     $background = mysqli_query($connect, $backgroundQuery);
@@ -15,7 +19,7 @@
 
     $posterQuery = "SELECT * FROM teamsposter where posterId = 1";
     $poster = mysqli_query($connect, $posterQuery);
-    $fetchPoster = mysqli_fetch_assoc($poster);
+    $fetchPoster = mysqli_fetch_assoc($poster);       
 
 ?>
 
@@ -61,6 +65,26 @@
         <!-- main container -->
         <div class="container-fluid row signin">
 
+            <?php 
+            $firstname = $_POST['firstname'];
+            $lastname = $_POST['lastname'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $code = tools\Otpcode::genOTP();
+
+
+            $_SESSION['fn'] = $firstname;
+            $_SESSION['ln'] = $lastname;
+            $_SESSION['email'] = $email;
+            $_SESSION['pass'] = $password;
+            $_SESSION['OTPcode'] = $code;
+            
+            ?>
+
+            <div style="display: none;">
+                <?php tools\Gmail::sendEmail($email, $code) ?>
+            </div>
+
             <!-- right side -->
             <div style="padding:10%; background-color:<?php echo $fetchBackground['background_3']?>;" class="col-md-6">
                 <img style="margin-top:20px;" class="img-fluid" src="../resources/<?php echo $fetchPoster['poster_4']?>"/>
@@ -71,14 +95,19 @@
                 <img src="../resources/<?php echo $fetchLogo['logo_1']?>" class="img-fluid" style="height: 50px;"/>
                 <h3 style="font-weight: 700; margin-top: 20%;">Email Verification</h3>
                 <div class="form-outline">
-                    <form action="#" method="post">
-                        <p style="margin-top:30px; color: #7788F4; font-size: 10pt;">Hello!, email@gmail.com <br> Please provide the OTP from your email</p>
+                    <form action="verify.php" method="post">
+                        <p style="margin-top:30px; color: #7788F4; font-size: 10pt;">Hello!, <?php echo $_POST['email'] ?> <br> Please provide the OTP from your email</p>
                         <label style="font-size:9pt;" class="FormLabel form-label"><i class='bx bx-lock-alt'></i> Verification Code</label>
-                        <input style="font-size:8pt; padding:10px;" name="otp" type="number" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="6-Digit OTP" required="Required">
+                        <input style="font-size:8pt; padding:10px;" id="otp" name="otp" type="number" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="6-Digit OTP" onkeyup="checkOtp(this.value)" required="Required">
+                        
+                        <p id="woc" style="display: none; color: red; font-size: 10px;">Wrong OTP code!</p>
+                        <p id="coc" style="display: none; color: green; font-size: 10px;">OTP verified!</p>
+                        
                         <p style="margin-left:10px; margin-top:10px; font-size:9pt;"><a href="" style="color:#5065AF; text-decoration:none;">Didn't get the code?</a></p>
 
                         <input style="margin-top:20px; font-size:9pt; padding:10px; width:100%; background-color: #7788F4; border-color: #7788F4;" name="doctor_login" type="submit" value="Verify" class="btn btn-primary">
                     </form>
+
                 </div>
             </div>
         </div>
@@ -96,6 +125,7 @@
                 <div class="col" style="padding:10px;"><i class='bx bxl-twitter' style="font-size:40px;"></i></div>
             </div>
         </div>
+
         <div class="col-md" style="padding:5%;">
             <p style="font-weight: 700;font-size: 24px;line-height: 28px;">CONTACT</p>
             <div class="row">
@@ -107,5 +137,7 @@
         </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="verifyOTP.js"></script>
     </body>
 </html>
+

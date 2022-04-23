@@ -1,5 +1,5 @@
 <?php
-    require "../data/connection.php";
+    require "../teamsDataCenter/connection.php";
 
     $backgroundQuery = "SELECT * FROM teamsbackground where backgroundId = 1";
     $background = mysqli_query($connect, $backgroundQuery);
@@ -15,7 +15,7 @@
 
     $posterQuery = "SELECT * FROM teamsposter where posterId = 1";
     $poster = mysqli_query($connect, $posterQuery);
-    $fetchPoster = mysqli_fetch_assoc($poster);
+    $fetchPoster = mysqli_fetch_assoc($poster);    
 
 ?>
 
@@ -73,15 +73,15 @@
                 <div class="form-outline">
                     <form action="#" method="post">
                         <label style="margin-top:30px; font-size:9pt;" class="FormLabel form-label"><i class='bx bx-envelope'></i> Email Address</label>
-                        <input style="font-size:8pt; padding:10px;" name="email" type="email" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Email" required="Required">
+                        <input id="email" style="font-size:8pt; padding:10px;" name="email" type="email" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Email" required="Required">
                         
                         <label style="margin-top:20px; font-size:9pt;" class="FormLabel form-label"><i class='bx bx-lock-alt'></i> Password</label>
-                        <input style="font-size:8pt; padding:10px;" name="password" type="password" ondrop="return false;" oninvalid="IninvalidMsg(this);" oninput="IninvalidMsg(this);" onpaste="return false;" class="form-control" placeholder="Password" required="Required">
+                        <input id="pass" style="font-size:8pt; padding:10px;" name="password" type="password" ondrop="return false;" oninvalid="IninvalidMsg(this);" oninput="IninvalidMsg(this);" onpaste="return false;" class="form-control" placeholder="Password" required="Required">
                         <p style="margin-left:10px; margin-top:10px; font-size:9pt;"><a href="forgot.html" style="color:#5065AF; text-decoration:none;">Forgot Password?</a></p>
 
-                        <input style="margin-top:20px; font-size:9pt; padding:10px; width:100%; background-color: #7788F4; border-color: #7788F4;" name="doctor_login" type="submit" value="Sign in" class="btn btn-primary">
+                        <input id="signinBtn" style="margin-top:20px; font-size:9pt; padding:10px; width:100%; background-color: #7788F4; border-color: #7788F4;" name="doctor_login" type="button" value="Sign in" class="btn btn-primary">
                     </form>
-                    <p>Don't you have an account yet?<a href="signup.html">Sign Up</a></p>
+                    <p>Don't you have an account yet?<a href="signup.php">Sign Up</a></p>
                 </div>
             </div>
         </div>
@@ -110,5 +110,6 @@
         </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="signin.js"></script>
     </body>
 </html>

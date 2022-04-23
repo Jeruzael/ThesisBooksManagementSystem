@@ -30,4 +30,6 @@
     $books = mysqli_query($connect, $booksQuery);
     $fetchBooks = mysqli_fetch_assoc($books);
 
+    
+    
 ?>
