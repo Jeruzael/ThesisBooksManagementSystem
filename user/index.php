@@ -1,7 +1,7 @@
 <?php
     require "../teamsDataCenter/connection.php";
 
-    $backgroundQuery = "SELECT * FROM teamsbackground where backgroundId = 1";
+/*    $backgroundQuery = "SELECT * FROM teamsbackground where backgroundId = 1";
     $background = mysqli_query($connect, $backgroundQuery);
     $fetchBackground = mysqli_fetch_assoc($background);
 
@@ -16,7 +16,7 @@
     $posterQuery = "SELECT * FROM teamsposter where posterId = 1";
     $poster = mysqli_query($connect, $posterQuery);
     $fetchPoster = mysqli_fetch_assoc($poster);
-
+    */
 ?>
 
 <!DOCTYPE html>

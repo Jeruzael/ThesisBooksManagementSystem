@@ -12,6 +12,36 @@
         exit();
     }
 ?>
+
+<?php 
+$bookIdQuery = "SELECT COUNT(bookId) FROM thesislibrary"; 
+$addBookId = mysqli_query($connect, $bookIdQuery);
+$fetchBookId = $addBookId->fetch_array(MYSQLI_NUM);
+$bookIdCount = $fetchBookId[0] + 1;
+
+
+
+if(!isset($_POST['editTitle']) && !isset($_POST['editAuthor']) && !isset($_POST['editProfessors']) && !isset($_POST['editPublish'])){
+    echo "<div style=\"position: relative; text-align: right; font-size: 10px;\"" . ">no data available to edit</div>";   
+}else{
+    $editBookId = $_POST['bookId'];
+    $editBookTitle = $_POST['editTitle'];
+    $editBookAuthor = $_POST['editAuthor'];
+    $editBookProfessor = $_POST['editProfessors'];
+    $editPublish = $_POST['editPublish'];
+
+    $editBookQuery = "UPDATE thesislibrary SET bookTitle = '$editBookTitle', bookAuthor = '$editBookAuthor', bookProfessor = '$editBookProfessor', bookPublished = '$editPublish' WHERE bookId = '$editBookId'";
+
+    if($connect->query($editBookQuery) === TRUE){
+        echo "<div style=\"position: relative; text-align: right; font-size: 10px;\"" . ">record successfully edited</div>";
+    }else{
+        echo "<div style=\"position: relative; text-align: right; font-size: 10px;\"" . ">". $connect->error . "</div>";   
+    }
+}
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 <!-- This code is prepared by Jeffrix Briol -->
@@ -44,7 +74,7 @@
             <div class="text" style="font-size:43px; font-weight:600; line-height:64px; font-family:'Poppins'; color:#7788F4;">Books</div>
             <div class="container-fluid row searchbox" style="padding-left:20%;padding-right:20%;">
                 <div class="search__container col-md-9">
-                    <input class="search__input" type="text" placeholder="Search thesis books...">
+                    <input class="search__input" class="search__input" onkeyup="searchbar__Function()" type="text" placeholder="Search thesis books...">
                 </div>
                 <div class="credits__container col-md-3" style="text-align: center;">
                     <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#addBook" style="border: 1px solid #FD8978; padding: 10px; width: 200px; background-color: #FD8978; color: #FFF; border-radius: 10px;"><i class='bx bx-plus'></i>Add New Book</button>
@@ -93,7 +123,7 @@
                             <td><?php echo $row['publish']; ?></td>
                             <td><img class="img-fluid" style="height: 50px;" src="../teamsResources/<?php echo $row['bookCover']; ?>"/></td>
                             <td><?php echo ucwords($row['bookStatus']); ?></td>
-                            <td><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editBook" style="padding: 5px; width: 70px; color: #fff; background-color: #FD8978; border: #FD8978;"><i class='bx bx-pencil' ></i>Edit</button></td>
+                            <td><button id="<?php echo "testId" . $row['bookId'] ?>" type="button" onclick="getIds(this)" class="btn" data-bs-toggle="modal" data-bs-target="#editBook" style="padding: 5px; width: 70px; color: #fff; background-color: #FD8978; border: #FD8978;"><i class='bx bx-pencil' ></i>Edit</button></td>
                         </tr>
                         <?php } ?>
                     </tbody>
@@ -116,25 +146,27 @@
                     <div class="modal-body">
                         <p style="color:#FD8978;">Thesis Book Details</p>
                         <form action="books.php" method="post">
-                        <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-book'></i> Book Title</label>
-                        <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" name="title" type="text" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Research Title" required="Required"/>
-                        <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-user'></i> Authors</label>
-                        <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" name="author" type="text" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Researcher" required="Required"/>
-                        <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-book-content'></i> Thesis Abstract</label>
-                        <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" name="abstract" type="text" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Research Abstract" required="Required"/>
-                        <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-time'></i> Date Publish</label>
-                        <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" name="publish" type="date" ondrop="return false;" onpaste="return false;" class="form-control" required="Required"/>
-                        <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-user'></i> Thesis Advicer</label>
-                        <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" name="author" type="text" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Professors" required="Required"/>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <input type="submit" class="btn" style="background-color:#FD8978; border-color:#FD8978; color:#FFF;" name="otp" value="Add"/>
-                        </form>
+                            <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-book'></i> Book Title</label>
+                            <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" name="title" type="text" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Research Title" required="Required"/>
+                            <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-user'></i> Authors</label>
+                            <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" name="author" type="text" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Researcher" required="Required"/>
+                            <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-book-content'></i> Thesis Abstract</label>
+                            <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" name="abstract" type="text" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Research Abstract" required="Required"/>
+                            <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-time'></i> Date Publish</label>
+                            <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" name="publish" type="date" ondrop="return false;" onpaste="return false;" class="form-control" required="Required"/>
+                            <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-user'></i> Thesis Advicer</label>
+                            <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" name="professors" type="text" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Professors" required="Required"/>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <input type="submit" class="btn" style="background-color:#FD8978; border-color:#FD8978; color:#FFF;" name="otp" value="Add"/>
+                        </form>                        
                     </div>
                 </div>
             </div>
         </div>
+
+
 
         <!-- Edit Book Modal -->
         <div class="modal fade" id="editBook" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -147,29 +179,106 @@
                     <div class="modal-body">
                         <p style="color:#FD8978;">Thesis Book Details</p>
                         <form action="books.php" method="post">
-                        <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-book'></i> Book Title</label>
-                        <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" name="title" type="text" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Research Title" required="Required"/>
-                        <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-user'></i> Authors</label>
-                        <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" name="author" type="text" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Researcher" required="Required"/>
-                        <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-book-content'></i> Thesis Abstract</label>
-                        <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" name="abstract" type="text" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Research Abstract" required="Required"/>
-                        <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-time'></i> Date Publish</label>
-                        <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" name="publish" type="date" ondrop="return false;" onpaste="return false;" class="form-control" required="Required"/>
-                        <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-user'></i> Thesis Advicer</label>
-                        <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" name="author" type="text" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Professors" required="Required"/>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <input type="submit" class="btn" style="background-color:#FD8978; border-color:#FD8978; color:#FFF;" name="otp" value="Save"/>
+                            <div style="display: none;">
+                                <input id="bookId" type="number" name="bookId">
+                            </div>
+                            <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-book'></i> Book Title</label>
+                            <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" id="editTitle" name="editTitle" type="text" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Research Title" required="Required"/>
+                            <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-user'></i> Authors</label>
+                            <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" id="editAuthor" name="editAuthor" type="text" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Researcher" required="Required"/>
+                            <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-book-content'></i> Thesis Abstract</label>
+                            <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" id="abstract" name="abstract" type="text" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Research Abstract" required="Required"/>
+                            <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-time'></i> Date Publish</label>
+                            <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" id="editPublish" name="editPublish" type="date" ondrop="return false;" onpaste="return false;" class="form-control" required="Required"/>
+                            <label style="margin-top:5px; font-size:16px; line-height:24px;" class="form-label"><i class='bx bx-user'></i> Thesis Advicer</label>
+                            <input style="font-size:13px; line-height:20px; padding:10px; border:1px solid rgba(167, 172, 182, 0.99); border-radius:0px;" id="editProfessors" name="editProfessors" type="text" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Professors" required="Required"/>
+                        </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <input type="submit" class="btn" style="background-color:#FD8978; border-color:#FD8978; color:#FFF;" name="otp" value="Save"/>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>        
 
     </body>
 
     <!-- navigation of menu -->
+    <script>
+          let sidebar = document.querySelector(".sidebar");
+          let closeBtn = document.querySelector("#btn");
+          let searchBtn = document.querySelector(".bx-search");
+          let showbtn = document.querySelector("#feat-btn");
+          let bookshow = document.querySelector(".book-show");
+        
+          closeBtn.addEventListener("click", ()=>{
+            sidebar.classList.toggle("open");
+            menuBtnChange();//calling the function(optional)
+          });
+
+          showbtn.addEventListener("click", ()=>{
+            bookshow.classList.toggle("show");
+             
+           });
+        
+          // following are the code to change sidebar button(optional)
+          function menuBtnChange() {
+           if(sidebar.classList.contains("open")){
+             closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+           }else {
+             closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+           }
+          }
+
+          function searchbar__Function() {
+
+          //Declare variables
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("searchbar__input");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("books__table");
+          tr = table.getElementsByTagName("tr");
+
+          // Loop through all table rows, and hide those who don't match the search query
+          for (i = 0; i < tr.length; i++) {
+            var found = false;
+            var td = tr[i].getElementsByTagName("td");
+          for(j = 0; j < td.length; j++) {
+          if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+          //if found at least once it is set to true
+          found = true;
+          }
+         }
+         //only hides or shows it after checking all columns
+        if(found){
+         tr[i].style.display = "";
+        } else {
+        tr[i].style.display = "none";
+          }
+        }
+        }
+          </script>
+    <script type="text/javascript">
+        let getId = new XMLHttpRequest();
+        getId.onload = function (){
+            
+        }
+
+        function getIds(id){
+         const hiddenBox = document.getElementById('bookId');
+         const editTitle = document.getElementById('editTitle');
+         const editAuthor = document.getElementById('editAuthor');         
+
+         hiddenBox.value = id.parentNode.parentNode.childNodes[1].innerHTML;
+         editTitle.value = id.parentNode.parentNode.childNodes[5].innerHTML;
+
+         alert(hiddenBox.value);
+
+
+        }
+
+    </script>
     <script src="../teamsScript/bootstrap.js"></script>
     <script src="../teamsScript/navigation.js"></script>
 </html>

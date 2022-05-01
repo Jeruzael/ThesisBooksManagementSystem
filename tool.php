@@ -8,6 +8,8 @@ namespace tools {
 	require 'PHPMailer-master/src/SMTP.php';
 	require '../teamsDataCenter/connection.php';
 
+	session_start();
+
 	class Gmail 
 	{
 		public static function sendEmail($addr, $mess)

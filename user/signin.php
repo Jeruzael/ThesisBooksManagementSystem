@@ -71,7 +71,7 @@
                 <img src="../resources/<?php echo $fetchLogo['logo_1']?>" class="img-fluid" style="height: 50px;"/>
                 <h3 style="font-weight: 700; margin-top: 20%;">Sign in</h3>
                 <div class="form-outline">
-                    <form action="#" method="post">
+                    <form action="signinAuth.php" method="post">
                         <label style="margin-top:30px; font-size:9pt;" class="FormLabel form-label"><i class='bx bx-envelope'></i> Email Address</label>
                         <input id="email" style="font-size:8pt; padding:10px;" name="email" type="email" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Email" required="Required">
                         
@@ -79,7 +79,7 @@
                         <input id="pass" style="font-size:8pt; padding:10px;" name="password" type="password" ondrop="return false;" oninvalid="IninvalidMsg(this);" oninput="IninvalidMsg(this);" onpaste="return false;" class="form-control" placeholder="Password" required="Required">
                         <p style="margin-left:10px; margin-top:10px; font-size:9pt;"><a href="forgot.html" style="color:#5065AF; text-decoration:none;">Forgot Password?</a></p>
 
-                        <input id="signinBtn" style="margin-top:20px; font-size:9pt; padding:10px; width:100%; background-color: #7788F4; border-color: #7788F4;" name="doctor_login" type="button" value="Sign in" class="btn btn-primary">
+                        <input id="signinBtn" style="margin-top:20px; font-size:9pt; padding:10px; width:100%; background-color: #7788F4; border-color: #7788F4;" name="doctor_login" type="submit" value="Sign in" class="btn btn-primary">
                     </form>
                     <p>Don't you have an account yet?<a href="signup.php">Sign Up</a></p>
                 </div>

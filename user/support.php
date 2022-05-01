@@ -1,5 +1,5 @@
 <?php
-    require "../data/connection.php";
+    require "../teamsDataCenter/connection.php";
 
     $backgroundQuery = "SELECT * FROM teamsbackground where backgroundId = 1";
     $background = mysqli_query($connect, $backgroundQuery);

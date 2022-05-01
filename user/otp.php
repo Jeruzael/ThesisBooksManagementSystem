@@ -1,4 +1,4 @@
-    <?php
+ <?php
     require "../teamsDataCenter/connection.php";
     include_once("../tool.php");
 

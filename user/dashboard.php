@@ -1,5 +1,5 @@
 <?php
-    require "../data/control.php";
+    require "../teamsDataCenter/control.php";
 
 ?>
 
